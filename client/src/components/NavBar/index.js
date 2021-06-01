@@ -1,7 +1,23 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import Drawers from "../Drawer"
 export default function NavBar() {
+
+
+
+
+    const [state, setState] = React.useState(false);
+
+    const handleOpen = () => {
+      setState(true);
+    };
+    const handleDrawerClose = () => {
+      setState(false);
+    };
   return (
     <>
       <div className="headerPhoto">
@@ -39,7 +55,14 @@ export default function NavBar() {
           </div>
           <div id="Slider" className="centerItem">
             
-            bro
+          <Drawers open={state} handleClose={handleDrawerClose} />
+          <IconButton
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleOpen}
+            >
+              <MenuIcon style={{ color: "white" }} />
+            </IconButton>
           </div>
         </div>
       </div>
