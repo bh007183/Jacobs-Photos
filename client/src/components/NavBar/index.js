@@ -20,8 +20,9 @@ export default function NavBar() {
     };
   return (
     <>
-      <div className="headerPhoto">
-        <div id="NavBar">
+      
+       
+        <div id="NavBar" >
           <div id="NameLogo" className="centerItem">
             <Link id="LogoRouterLink" to="/">
               
@@ -65,7 +66,11 @@ export default function NavBar() {
             </IconButton>
           </div>
         </div>
-      </div>
+        
+
+        
+
+      
     </>
   );
 }

@@ -1,0 +1,118 @@
+
+.headerPhoto{
+    background-image: url("../../Assets/jacobsPhotos/pattern.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    contain: content;
+    overflow: scroll;
+   
+  
+  background-size: cover;
+  height: 100vh
+  
+}
+  /* home cards */
+  #CardContain{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: absolute;
+    top: 25%;
+    width: 100vw;
+    
+}
+#photoCard{
+    grid-column: 2/6;
+    background: rgba(71, 1, 1, 0.2);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    
+    
+
+
+
+}
+#videoCard{
+    grid-column: 8/12;
+    background: rgba(71, 1, 1, 0.2);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    
+    
+
+}
+
+
+.imgContain{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#videoImg{
+    
+    background:url("../../Assets/jacobsPhotos/sup.jpg");
+    background-position: bottom;
+    margin: 0 auto;
+    
+    width: 80%;
+    aspect-ratio: 5 / 5;
+    background-size: cover;
+    border-radius: 20px;
+    
+}
+#photoImg{
+    background:url("../../Assets/jacobsPhotos/Robin-Lake.jpg"); 
+    margin: 0 auto;
+    width: 80%;
+    aspect-ratio: 5 / 5;
+    background-size: cover;
+    border-radius: 20px;
+
+}
+
+.cardText{
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: 70%
+}
+
+
+
+
+
+
+@media only screen and (max-width: 870px) {
+    
+  
+
+    #photoCard{
+        grid-column: 3/11;
+        background: rgba(71, 1, 1, 0.2);
+        backdrop-filter: blur(3px);
+        
+        
+        
+    
+    
+    
+    }
+    #videoCard{
+        grid-column: 3/11;
+        background: rgba(71, 1, 1, 0.2);
+        backdrop-filter: blur(3px);
+        margin-top: 10px;
+      
+        
+    
+    }
+    #CardContain{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        position: absolute;
+        top: 15%;
+        width: 100vw;
+        
+    }
+    
+  }

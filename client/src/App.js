@@ -5,6 +5,7 @@ import {
   Link
 } from "react-router-dom";
 import NavBar from "./components/NavBar"
+import Home from "./pages/Home"
 import './App.css';
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
     <>
     <Router>
       <NavBar/>
+      <Route exact path="/">
+        <Home/>
+      </Route>
 
 
     </Router>
