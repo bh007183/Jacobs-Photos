@@ -1,0 +1,82 @@
+#NavBar{
+    width: 100vw;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background: rgba(71, 1, 1, 0.2);
+    backdrop-filter: blur(3px)
+}
+
+.centerItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#NameLogo{
+    grid-column: 1/3;
+    
+}
+#Photos{
+    grid-column: 7;
+   
+    
+}
+#Video{
+   
+    grid-column: 8;
+    
+}
+#About{
+    
+    grid-column: 9;
+    
+}
+#Contact{
+    
+    grid-column: 10;
+   
+}
+#Slider{
+    grid-column: 11/12;
+    display: none;
+}
+
+/* For Header Photo */
+
+.headerPhoto{
+    background: url("../../Assets/jacobsPhotos/pattern.jpg");
+    background-position: center;
+    
+  height: unset;
+  background-size: fit;
+  height: 25vh
+}
+
+/* For setting Link Style */
+
+.RouterLink{
+    color: white;
+    text-decoration: none;
+}
+#LogoRouterLink{
+    color: white;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 870px) {
+    
+    .RouterLink{
+        display: none;
+    } 
+    #Slider{
+        display: block;
+    }
+    
+  }
+
+
+
+
+
