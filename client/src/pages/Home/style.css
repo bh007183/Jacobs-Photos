@@ -28,8 +28,14 @@
     
     
 
+    
 
 
+}
+
+.RouterLink{
+    color: white;
+    text-decoration: none;
 }
 #videoCard{
     grid-column: 8/12;

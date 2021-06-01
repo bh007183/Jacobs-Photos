@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import "./style.css"
 export default function index() {
     return (
@@ -6,6 +7,7 @@ export default function index() {
 
         <div id="CardContain">
         <div id="photoCard">
+        <Link className="RouterLink" to="/photos">
         <br></br>
             <div className="imgContain" >
                 <div id="photoImg" alt="Photo Link" >
@@ -15,10 +17,11 @@ export default function index() {
               
             </div>
             <br></br>
-
+            </Link>
         </div>
-
+       
             <div type="button" id="videoCard">
+            <Link className="RouterLink" to="/videos">
             <br></br>
             <div className="imgContain">
                  <div id="videoImg" alt="Video Link">
@@ -29,8 +32,9 @@ export default function index() {
             </div>
 
             <br></br>
-
+            </Link>
             </div>
+            
 
         </div>
         

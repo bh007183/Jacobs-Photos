@@ -6,6 +6,10 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar"
 import Home from "./pages/Home"
+import Video from "./pages/Video"
+import Photos from "./pages/Photos"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 import './App.css';
 
 function App() {
@@ -16,6 +20,18 @@ function App() {
       <NavBar/>
       <Route exact path="/">
         <Home/>
+      </Route>
+      <Route exact path="/photos">
+        <Photos/>
+      </Route>
+      <Route exact path="/videos">
+        <Video/>
+      </Route>
+      <Route exact path="/about">
+        <About/>
+      </Route>
+      <Route exact path="/contact">
+        <Contact/>
       </Route>
 
 
