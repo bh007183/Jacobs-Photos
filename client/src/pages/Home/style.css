@@ -33,7 +33,7 @@
 
 }
 
-.RouterLink{
+.ImgLink{
     color: white;
     text-decoration: none;
 }
@@ -97,10 +97,6 @@
         background: rgba(71, 1, 1, 0.2);
         backdrop-filter: blur(3px);
         
-        
-        
-    
-    
     
     }
     #videoCard{

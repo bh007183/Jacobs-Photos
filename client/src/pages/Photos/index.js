@@ -3,8 +3,8 @@ import "./style.css"
 
 export default function Photos() {
     return (
-        <div>
-            <p>photo page</p>
+        <div className="PhotoContain">
+            
         </div>
     )
 }

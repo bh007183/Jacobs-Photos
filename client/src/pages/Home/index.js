@@ -7,7 +7,7 @@ export default function index() {
 
         <div id="CardContain">
         <div id="photoCard">
-        <Link className="RouterLink" to="/photos">
+        <Link  className="ImgLink" to="/photos">
         <br></br>
             <div className="imgContain" >
                 <div id="photoImg" alt="Photo Link" >
@@ -21,7 +21,7 @@ export default function index() {
         </div>
        
             <div type="button" id="videoCard">
-            <Link className="RouterLink" to="/videos">
+            <Link className="ImgLink" to="/videos">
             <br></br>
             <div className="imgContain">
                  <div id="videoImg" alt="Video Link">
