@@ -109,7 +109,7 @@
     
     }
     #CardContain{
-        display: grid;
+        /* display: grid; */
         grid-template-columns: repeat(12, 1fr);
         position: absolute;
         top: 15%;
