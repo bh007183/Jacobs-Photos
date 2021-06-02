@@ -5,6 +5,7 @@ const cors = require("cors");
 const db = require("./models");
 // Sets up the Express App
 var PORT = process.env.PORT || 8080;
+require("dotenv").config();
 
 
 // Sets up the Express app to handle data parsing
@@ -37,7 +38,7 @@ app.use(adminRoutes)
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/JacobDB", {
+  process.env.MONGODB_URI || "mongodb://localhost/jacobsphotos", {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false

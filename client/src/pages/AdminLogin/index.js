@@ -27,6 +27,7 @@ export default function AdminLogin() {
         event.preventDefault()
         axios.post("http://localhost:8080/adminLoginApi", {
             data: userState,
+            headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
         }).then(res => {
             
             localStorage.setItem("Token", res.data.token)

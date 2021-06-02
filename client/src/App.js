@@ -13,7 +13,7 @@ import Contact from "./pages/Contact"
 import AdminLogin from "./pages/AdminLogin"
 import AdminHome from "./pages/AdminHome"
 import Error from "./pages/Unauthorized"
-import AdminPhotoManage from "./pages/AdminPhotoManage"
+import MediaUpload from "./pages/AdminPhotoManage"
 import './App.css';
 
 function App() {
@@ -46,8 +46,8 @@ function App() {
       <Route exact path="/error">
         <Error/>
       </Route>
-      <Route exact path="/managePhotos">
-        <AdminPhotoManage/>
+      <Route exact path="/UploadMedia">
+        <MediaUpload/>
       </Route>
 
 

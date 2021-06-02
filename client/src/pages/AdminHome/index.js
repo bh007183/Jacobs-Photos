@@ -24,11 +24,11 @@ export default function AdminHome() {
     <div id="AdminDashContain">
       <div className="firstCardContain">
         <div id="AdminPhotoCard">
-          <Link className="ImgLink" to="/managePhotos">
+          <Link className="ImgLink" to="/UploadMedia">
             <br></br>
             <div className="imgContain">
               <div id="AdminManagePhotoImg" alt="Photo Link">
-                <h1 className="cardText">Manage Photos</h1>
+                <h1 className="cardText">Upload Media</h1>
               </div>
             </div>
             <br></br>

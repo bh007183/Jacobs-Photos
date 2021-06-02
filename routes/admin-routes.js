@@ -3,7 +3,31 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
+
+
+
+
+
+
+// create user
+// router.post("/api/createUser", async (req, res) => {
+//   const hashPass = bcrypt.hashSync("peace", saltRounds);
+
+//   const data = await db.Admin.create({
+   
+//     username: req.body.username,
+//     email: "jacobhopkinsphoto@gmail.com",
+//     password: hashPass,
+
+//   }).catch((err) => {if(err.errors[0].message.substring(0, 6) === "users."){res.status(409).send(err.errors[0].message.substring(6))} else{res.status(409).send("invalid email")} })
+
+//   res.status(200).send("Account Created!");
+// });
+
+
+
+
+
 
 router.post("/adminLoginApi", async (req, res) => {
   const data = await db.Admin.findOne({
@@ -34,33 +58,35 @@ router.post("/adminLoginApi", async (req, res) => {
 });
 
 router.get("/adminAccessAuthorized", async (req, res) => {
-  let token = false;
-  if (!req.headers) {
-    token = false;
-  } else if (!req.headers.authorization) {
-    token = false;
-  } else {
-    token = req.headers.authorization.split(" ")[1];
-  }
-  if (!token) {
-    try {
-      await jwt.verify(
+
+    let token = false;
+    if (!req.headers) {
+      token = false;
+    } else if (!req.headers.authorization) {
+      token = false;
+    } else {
+      token = req.headers.authorization.split(" ")[1];
+    }
+    if (!token) {
+      res.status(500).send("Please Login");
+    } else {
+      const data = await jwt.verify(
         req.headers.authorization.split(" ")[1],
         process.env.JWS_TOKEN,
         (err, data) => {
           if (err) {
             res.status(401);
           } else {
-            res.status(200);
+            return data;
           }
         }
       );
-    } catch (err) {
-      res.status(401);
+      if (data) {
+        res.status(200).send("Access Granted");
+      } else {
+        res.status(403).send("Session Expired. Please Login.");
+      }
     }
-  } else {
-    res.status(403).send("Session Expired. Please Login.");
-  }
-});
+  });
 
 module.exports = router;
