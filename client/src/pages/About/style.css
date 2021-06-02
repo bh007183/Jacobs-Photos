@@ -1,0 +1,7 @@
+.aboutMain {
+    background-image: url(../../Assets/jacobsPhotos/aboutbackground.jpeg);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 4, 4);
+}
