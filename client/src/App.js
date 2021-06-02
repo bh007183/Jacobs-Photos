@@ -10,6 +10,7 @@ import Video from "./pages/Video"
 import Photos from "./pages/Photos"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import AdminLogin from "./pages/AdminLogin"
 import './App.css';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
       </Route>
       <Route exact path="/contact">
         <Contact/>
+      </Route>
+      <Route exact path="/AdminLogin/1996bacon">
+        <AdminLogin/>
       </Route>
 
 
