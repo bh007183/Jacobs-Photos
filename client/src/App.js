@@ -11,6 +11,9 @@ import Photos from "./pages/Photos"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import AdminLogin from "./pages/AdminLogin"
+import AdminHome from "./pages/AdminHome"
+import Error from "./pages/Unauthorized"
+import MediaUpload from "./pages/AdminPhotoManage"
 import './App.css';
 
 function App() {
@@ -34,8 +37,17 @@ function App() {
       <Route exact path="/contact">
         <Contact/>
       </Route>
-      <Route exact path="/AdminLogin/1996bacon">
+      <Route exact path="/AdminLogin">
         <AdminLogin/>
+      </Route>
+      <Route exact path="/adminAccess">
+        <AdminHome/>
+      </Route>
+      <Route exact path="/error">
+        <Error/>
+      </Route>
+      <Route exact path="/UploadMedia">
+        <MediaUpload/>
       </Route>
 
 

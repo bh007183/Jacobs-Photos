@@ -1,0 +1,130 @@
+#AdminDashContain{
+
+background-color: rgb(3, 3, 3);
+height: 100vh;
+overflow: scroll;
+
+
+
+}
+
+
+.firstCardContain{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* margin-top: 10%; */
+    width: 100vw;
+    
+}
+.secCardContain{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+    width: 100vw;
+    
+}
+#AdminPhotoCard{
+    grid-column: 2/7;
+ 
+    margin-top: 10%;
+    
+    
+
+    
+
+
+}
+
+.ImgLink{
+    color: white;
+    text-decoration: none;
+}
+#AdminVideoCard{
+    grid-column: 7/12;
+
+    margin-top: 10%;
+    
+    
+
+}
+#AdminManageCard{
+    grid-column: 2/7;
+  
+    margin-top: 10%;
+    
+    
+
+}
+
+
+.imgContain{
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#AdminVideoImg{
+    
+    background:url("../../Assets/jacobsPhotos/DSC09182.jpg");
+    background-position: center;
+    margin: 0 auto;
+    
+    width: 80%;
+    aspect-ratio: 5 / 5;
+    background-size: cover;
+    border-radius: 20px;
+    
+}
+#AdminManagePhotoImg{
+    background:url("../../Assets/jacobsPhotos/DSC09164.jpg"); 
+    margin: 0 auto;
+    width: 80%;
+    aspect-ratio: 5 / 5;
+    background-size: cover;
+    border-radius: 20px;
+
+}
+#AdminProfilePhotoImg{
+    background:url("../../Assets/jacobsPhotos/DSC00276 copy.jpg mE.jpeg"); 
+    margin: 0 auto;
+    width: 80%;
+    aspect-ratio: 5 / 5;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+
+}
+
+.cardText{
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: 70%
+}
+
+
+@media only screen and (max-width: 870px) {
+    
+  
+
+    #AdminPhotoCard{
+        grid-column: 3/11;
+    }
+    #AdminVideoCard{
+        grid-column: 3/11;
+        margin-top: 10px;
+    }
+    #AdminManageCard{
+        grid-column: 3/11;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+   
+    .secCardContain{
+        grid-template-columns: repeat(12, 1fr);
+        margin-top: 10px;
+        width: 100vw;
+        
+    }
+    
+  }
