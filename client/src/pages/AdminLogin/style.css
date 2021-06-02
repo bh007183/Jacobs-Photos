@@ -1,5 +1,26 @@
-.LoginContain{
-    background: url("../../Assets/jacobsPhotos/Robin-Lake.jpg");
-    height: 100vh;
-    background-size: cover;
+#LoginContain {
+  background: url("../../Assets/jacobsPhotos/Robin-Lake.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+#LoginFormContainer {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*  */
+  height: 30%;
+}
+#inputRow{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+   
+}
+.inputColumn{
+    grid-column: 6/8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 }

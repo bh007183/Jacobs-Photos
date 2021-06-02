@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 
 
 const photoSchema = new mongoose.Schema({
-  Title: { type: String},
-  url: { type: String},
+  title: { type: String},
+  image: { type: String},
+  colorScheme: { type: String},
+  category: { type: String},
+  about: { type: String},
 });
 const Photo = mongoose.model("Photo", photoSchema)
 module.exports =  Photo ;
