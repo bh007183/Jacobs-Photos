@@ -17,11 +17,54 @@ export default function Photos() {
       });
   }, []);
 
+
+
   return (
+    < >
+    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     <div id="PhotoContain">
-      <div className="imageContain">
-        <img src={images} alt="test"></img>
+     
+      
+      <div className="hover">
+        <img loading="lazy" className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img loading="lazy" className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img loading="lazy" className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img loading="lazy" className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img loading="lazy" className="portrate" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img loading="lazy" className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="portrate" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="landscape" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="portrate" alt="test"></img>
+      </div>
+      <div className="hover" >
+        <img className="landscape" alt="test"></img>
       </div>
     </div>
+    </>
   );
 }
