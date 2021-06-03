@@ -26,7 +26,7 @@ router.post("/addVideo", async (req, res) => {
       }
     );
     if (data) {
-      db.Video.create(req.body.data).catch((err) =>
+      db.Video.create(req.body).catch((err) =>
         res.status(409).send("Image Upload Fail. Make sure you are logged in.")
       );
       res.status(200).send("Video Uploaded");
