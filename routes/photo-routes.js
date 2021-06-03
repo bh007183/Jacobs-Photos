@@ -29,15 +29,21 @@ const jwt = require("jsonwebtoken");
         }
       );
       if (data) {
-        db.Video.create(req.body.data).catch((err) =>
+        db.Photo.create(req.body.data).catch((err) =>
           res.status(409).send("Image Upload Fail. Make sure you are logged in.")
         );
-        res.status(200).send("Video Uploaded");
+        res.status(200).send("Photo Uploaded");
       } else {
         res.status(403).send("Session Expired. Please Login.");
       }
     }
   });
+
+  router.get("/getImages", async (req, res)=> {
+    let data = await db.Photo.find().catch(err => console.log(err))
+
+    res.status(200).json(data)
+  })
   
 
 

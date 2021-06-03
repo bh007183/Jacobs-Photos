@@ -9,20 +9,6 @@ const jwt = require("jsonwebtoken");
 
 
 
-// create user
-// router.post("/api/createUser", async (req, res) => {
-//   const hashPass = bcrypt.hashSync("peace", saltRounds);
-
-//   const data = await db.Admin.create({
-   
-//     username: req.body.username,
-//     email: "jacobhopkinsphoto@gmail.com",
-//     password: hashPass,
-
-//   }).catch((err) => {if(err.errors[0].message.substring(0, 6) === "users."){res.status(409).send(err.errors[0].message.substring(6))} else{res.status(409).send("invalid email")} })
-
-//   res.status(200).send("Account Created!");
-// });
 
 
 
