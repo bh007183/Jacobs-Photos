@@ -29,11 +29,11 @@ export default function AdminLogin() {
             data: userState,
             headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
         }).then(res => {
-            
             localStorage.setItem("Token", res.data.token)
             window.location.href = "/adminAccess"
         }).catch(err => {
-            alert(err.response.data)
+            alert(err)
+            // .response.data
         })
     }
 
