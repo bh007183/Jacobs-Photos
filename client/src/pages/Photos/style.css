@@ -1,4 +1,41 @@
-#PhotoContain{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+#photobackground {
+  height: 5000px;
+}
+
+#PhotoContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.imageContain {
+}
+
+.hover:hover{
+    transform: scale(1.1);
+  }
+  
+  .hover{
+    transition:  0.2s; 
+  }
+
+.landscape {
+  content: url("../../Assets/jacobsPhotos/DJI_0183.jpeg");
+
+  max-height: 275px;
+}
+.portrate {
+  content: url("../../Assets/jacobsPhotos/DSC04795.jpg");
+  max-height: 300px;
+}
+
+@media only screen and (max-width: 870px) {
+  .landscape {
+    max-width: 100vw;
+  }
+  .portrate {
+    max-width: 100vw;
+  }
 }
