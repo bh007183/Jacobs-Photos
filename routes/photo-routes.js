@@ -41,8 +41,12 @@ const jwt = require("jsonwebtoken");
   });
 
   router.get("/getImages", async (req, res)=> {
-    let data = await db.Photo.find().catch(err => console.log(err))
+    let data = await db.Photo.find({}).sort({ createdAt: -1 }).catch(err => res.status(404).send("There was an issue retreiving images"))
+    res.status(200).json(data)
+  })
 
+  router.get("/apiByCategory/:category", async (req, res)=> {
+    let data = await db.Photo.find({category: req.params.category}).sort({ createdAt: -1 }).catch(err => res.status(404).send("There was an issue retreiving images"))
     res.status(200).json(data)
   })
   

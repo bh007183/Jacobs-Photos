@@ -7,7 +7,7 @@ const slice = createSlice({
         Featured: []
     },
     reducers:{
-        addAdmin: (Admin, action) => {
+        setAdmin: (Admin, action) => {
             Admin.Featured.push(action.payload)
         }
     }

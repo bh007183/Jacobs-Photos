@@ -6,6 +6,13 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import axios from "axios";
 import { Alert} from '@material-ui/lab';
+import {useDispatch, useSelector} from "react-redux"
+import {uploadPhoto, resetSuccessFail} from "../../store/photoActions"
+
+
+
+
+
 export default function UploadPhoto() {
   const [photo, setPhoto] = useState({
     image: "",
@@ -19,6 +26,9 @@ export default function UploadPhoto() {
     success: "",
     error: "",
   });
+  const dispatch = useDispatch()
+  const Success = useSelector(state => state.Store.Photo.Success)
+  const Error = useSelector(state => state.Store.Photo.Error)
 
   const handleChange = (event) => {
     let name = event.target.name;
@@ -48,38 +58,12 @@ export default function UploadPhoto() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    dispatch(uploadPhoto(photo))
   
-      axios
-      .post("http://localhost:8080/addPhoto", photo, {
-        headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
-        
-      
-        
-      })
-      .then((res) => {
-        console.log(res)
-        setStatus({
-          success: res.data,
-        });
-        setTimeout(() => {
-          setStatus({
-            error: "",
-            success: "",
-          });
-        }, 2000);
-      })
-      .catch((err) => {
-        console.log(err)
-        setStatus({
-          error: err.response.data,
-        });
-        setTimeout(() => {
-          setStatus({
-            error: "",
-            success: "",
-          });
-        }, 5000);
-      });
+     setTimeout(() => {
+      dispatch(resetSuccessFail())
+     }, 4000);
 
    
   }
@@ -171,13 +155,13 @@ export default function UploadPhoto() {
 </div>
         <div className="row11">
         <div className="alert">
-        {status.success ? (
-              <Alert style={{width: "100%"}} severity="success">{status.success}</Alert>
+        {Success ? (
+              <Alert style={{width: "100%"}} severity="success">{Success}</Alert>
             ) : (
               <></>
             )}
-            {status.error ? (
-              <Alert  style={{width: "100%"}} severity="error">{status.error}</Alert>
+            {Error ? (
+              <Alert  style={{width: "100%"}} severity="error">{Error}</Alert>
             ) : (
               <></>
             )}

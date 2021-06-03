@@ -7,32 +7,40 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import {getPhotoByCategory} from "../../store/photoActions"
+import {useDispatch} from "react-redux"
 
 import "./style.css";
 
 export default function PhotoDrawer(props) {
+    const dispatch = useDispatch()
+
+const handleCategory = (event) => {
+    dispatch(getPhotoByCategory(event.target.outerText))
+}
+
   return (
     <>
       <Drawer anchor={"left"} open={props.open} onClose={props.handleClose}>
         <div role="presentation" onClick={props.handleClose}>
           <List>
-            <ListItem button>
+            <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Featured"} />
             </ListItem>
             <Divider />
-            <ListItem button>
+            <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Adventure"} />
             </ListItem>
             <Divider />
-            <ListItem button>
+            <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Night"} />
             </ListItem>
             <Divider />
-            <ListItem button>
+            <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Scenery"} />
             </ListItem>
             <Divider />
-            <ListItem button>
+            <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Plants"} />
             </ListItem>
           </List>

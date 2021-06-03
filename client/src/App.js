@@ -15,11 +15,15 @@ import AdminHome from "./pages/AdminHome"
 import Error from "./pages/Unauthorized"
 import MediaUpload from "./pages/AdminPhotoManage"
 import './App.css';
+import configureStore from "./store/configureStore";
+import { Provider } from "react-redux";
+const store = configureStore()
 
 function App() {
   return (
 
     <>
+     <Provider store={store}>
     <Router>
       <NavBar/>
       <Route exact path="/">
@@ -52,6 +56,7 @@ function App() {
 
 
     </Router>
+    </Provider>
     </>
   );
 }

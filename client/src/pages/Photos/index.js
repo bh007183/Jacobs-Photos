@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import PhotoDrawer from "../../components/PhotoDrawer"
 import axios from "axios";
-
+import {getAllPhotos} from "../../store/photoActions"
+import {useDispatch, useSelector} from "react-redux"
+import ReactCardFlip from 'react-card-flip';
+import Front from "../../components/ImageCard/Front"
+import Back from "../../components/ImageCard/Back"
 
 export default function Photos() {
-  const [image, setImage] = useState();
+
+  const dispatch = useDispatch()
+  const allImages = useSelector(state => state.Store.Photo.All)
+  
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/getImages")
-      .then((res) => {
-        setImage(res.data);
-      })
-      .catch((err) => {
-        alert(err.response.data);
-      });
+    dispatch(getAllPhotos)
   }, []);
 
 
@@ -29,6 +29,20 @@ export default function Photos() {
     };
 
 
+    const [isFlipped, setIsFlipped] = useState(false)
+
+const handleFlip = (event) => {
+    event.preventDefault()
+    if(isFlipped === false){
+        setIsFlipped(true)
+    }
+    if(isFlipped === true){
+        setIsFlipped(false)
+    }
+}
+
+
+
   return (
     < div id="photobackground">
     <br></br>
@@ -39,7 +53,11 @@ export default function Photos() {
       <PhotoDrawer open={state} handleClose={handleDrawerClose} />
     <div id="PhotoContain">
      
-      
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+            <Front  handleFlip={handleFlip} />
+            <Back handleFlip={handleFlip}/>
+    </ReactCardFlip>
+
       <div className="hover">
         <img loading="lazy" className="landscape" alt="test"></img>
       </div>

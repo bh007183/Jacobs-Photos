@@ -2,18 +2,25 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { Alert} from '@material-ui/lab';
+import {useDispatch, useSelector} from "react-redux"
+import {uploadVideo, resetSuccessFail} from "../../store/videoActions"
 
 
 export default function UploadVideo() {
+
+  const dispatch = useDispatch()
+
+  const Success = useSelector(state => state.Store.Video.Success)
+  const Error = useSelector(state => state.Store.Video.Error)
+
+
+
   const [media, setMedia] = useState({
     title: "",
     video: "",
   });
   // setting status of photo upload
-  const [status, setStatus] = useState({
-    success: "",
-    error: "",
-  });
+  
 
   const handleChange = (event) => {
     let name = event.target.name;
@@ -26,32 +33,15 @@ export default function UploadVideo() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:8080/addVideo", media, {
-        headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
-      })
-      .then((res) => {
-        setStatus({
-          success: res.data,
-        });
+    dispatch(uploadVideo(media))
+   
         setTimeout(() => {
-          setStatus({
-            error: "",
-            success: "",
-          });
-        }, 2000);
-      })
-      .catch((err) => {
-        setStatus({
-          error: err.response.data,
-        });
-        setTimeout(() => {
-          setStatus({
-            error: "",
-            success: "",
-          });
-        }, 5000);
-      });
+          dispatch(resetSuccessFail())
+        }, 4000);
+     
+       
+       
+      
   };
 
   return (
@@ -94,13 +84,13 @@ export default function UploadVideo() {
       </div>
       <div className="row11">
         <div className="alert">
-        {status.success ? (
-              <Alert style={{width: "100%"}} severity="success">{status.success}</Alert>
+        {Success ? (
+              <Alert style={{width: "100%"}} severity="success">{Success}</Alert>
             ) : (
               <></>
             )}
-            {status.error ? (
-              <Alert  style={{width: "100%"}} severity="error">{status.error}</Alert>
+            {Error ? (
+              <Alert  style={{width: "100%"}} severity="error">{Error}</Alert>
             ) : (
               <></>
             )}
