@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
+import PhotoDrawer from "../../components/PhotoDrawer"
 import axios from "axios";
 
 
@@ -25,6 +26,7 @@ export default function Photos() {
       <br></br>
       <br></br>
       <br></br>
+      <button id="categoryButton"><p id="vertical">Open</p></button>
     <div id="PhotoContain">
      
       
