@@ -19,6 +19,15 @@ export default function Photos() {
   }, []);
 
 
+  const [state, setState] = React.useState(false);
+
+    const handleOpen = () => {
+      setState(true);
+    };
+    const handleDrawerClose = () => {
+      setState(false);
+    };
+
 
   return (
     < div id="photobackground">
@@ -26,7 +35,8 @@ export default function Photos() {
       <br></br>
       <br></br>
       <br></br>
-      <button id="categoryButton"><p id="vertical">Open</p></button>
+      <button onClick={handleOpen} id="categoryButton"><p id="vertical">Open</p></button>
+      <PhotoDrawer open={state} handleClose={handleDrawerClose} />
     <div id="PhotoContain">
      
       

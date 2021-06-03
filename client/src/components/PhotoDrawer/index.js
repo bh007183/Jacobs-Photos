@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
 import Drawer from "@material-ui/core/Drawer";
 import HomeIcon from "@material-ui/icons/Home";
 import List from "@material-ui/core/List";
@@ -11,10 +9,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import "./style.css";
-import InfoIcon from "@material-ui/icons/Info";
-import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 
 export default function PhotoDrawer(props) {
   return (
@@ -23,38 +17,23 @@ export default function PhotoDrawer(props) {
         <div role="presentation" onClick={props.handleClose}>
           <List>
             <ListItem button>
-              <ListItemIcon>
-                <HomeIcon className="DrawerIcons" />
-              </ListItemIcon>
-              <ListItemText primary={"Home Page"} />
+              <ListItemText primary={"Featured"} />
             </ListItem>
             <Divider />
             <ListItem button>
-              <ListItemIcon>
-                <PhotoLibraryIcon className="DrawerIcons" />
-              </ListItemIcon>
-              <ListItemText primary={"Photos"} />
+              <ListItemText primary={"Adventure"} />
             </ListItem>
             <Divider />
             <ListItem button>
-              <ListItemIcon>
-                <VideoLibraryIcon className="DrawerIcons" />
-              </ListItemIcon>
-              <ListItemText primary={"Videos"} />
+              <ListItemText primary={"Night"} />
             </ListItem>
             <Divider />
             <ListItem button>
-              <ListItemIcon>
-                <InfoIcon className="DrawerIcons" />
-              </ListItemIcon>
-              <ListItemText primary={"About"} />
+              <ListItemText primary={"Scenery"} />
             </ListItem>
             <Divider />
             <ListItem button>
-              <ListItemIcon>
-                <ContactSupportIcon className="DrawerIcons" />
-              </ListItemIcon>
-              <ListItemText primary={"Contact"} />
+              <ListItemText primary={"Plants"} />
             </ListItem>
           </List>
         </div>
