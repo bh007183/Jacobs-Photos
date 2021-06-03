@@ -27,7 +27,7 @@ export default function UploadVideo() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:8080/addVideo", {"body": media}, {
+      .post("http://localhost:8080/addVideo", media, {
         headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
       })
       .then((res) => {

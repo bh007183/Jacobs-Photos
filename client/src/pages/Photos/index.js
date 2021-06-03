@@ -21,7 +21,7 @@ export default function Photos() {
 
 
   return (
-    < >
+    < div id="photobackground">
     <br></br>
       <br></br>
       <br></br>
@@ -49,24 +49,24 @@ export default function Photos() {
         <img loading="lazy" className="landscape" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="landscape" alt="test"></img>
+        <img loading="lazy" className="landscape" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="portrate" alt="test"></img>
+        <img loading="lazy" className="portrate" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="landscape" alt="test"></img>
+        <img loading="lazy" className="landscape" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="landscape" alt="test"></img>
+        <img loading="lazy" className="landscape" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="portrate" alt="test"></img>
+        <img loading="lazy" className="portrate" alt="test"></img>
       </div>
       <div className="hover" >
-        <img className="landscape" alt="test"></img>
+        <img loading="lazy" className="landscape" alt="test"></img>
       </div>
     </div>
-    </>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const photoSchema = new mongoose.Schema({
   title: { type: String},
   image: { type: String},
-  colorScheme: { type: String},
+  layout: { type: String},
   category: { type: String},
   about: { type: String},
 });

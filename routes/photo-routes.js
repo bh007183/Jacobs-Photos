@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 
 
   router.post("/addPhoto", async (req, res) => {
+    
     let token = false;
     if (!req.headers) {
       token = false;
@@ -29,7 +30,7 @@ const jwt = require("jsonwebtoken");
         }
       );
       if (data) {
-        db.Photo.create(req.body.data).catch((err) =>
+        db.Photo.create(req.body).catch((err) =>
           res.status(409).send("Image Upload Fail. Make sure you are logged in.")
         );
         res.status(200).send("Photo Uploaded");
