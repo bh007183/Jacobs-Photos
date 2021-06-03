@@ -114,7 +114,8 @@ export default function UploadPhoto() {
               </MenuItem>
               <MenuItem value={"Adventure"}>Adventure</MenuItem>
               <MenuItem value={"Scenery"}>Scenery</MenuItem>
-              <MenuItem value={"Wedding"}>Wedding</MenuItem>
+              <MenuItem value={"Featured"}>Featured</MenuItem>
+              <MenuItem value={"Night"}>Night</MenuItem>
               <MenuItem value={"Plants"}>Plants</MenuItem>
             </Select>
           </FormControl>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
+import PhotoDrawer from "../../components/PhotoDrawer"
 import axios from "axios";
 
 
@@ -18,6 +19,15 @@ export default function Photos() {
   }, []);
 
 
+  const [state, setState] = React.useState(false);
+
+    const handleOpen = () => {
+      setState(true);
+    };
+    const handleDrawerClose = () => {
+      setState(false);
+    };
+
 
   return (
     < div id="photobackground">
@@ -25,6 +35,8 @@ export default function Photos() {
       <br></br>
       <br></br>
       <br></br>
+      <button onClick={handleOpen} id="categoryButton"><p id="vertical">Open</p></button>
+      <PhotoDrawer open={state} handleClose={handleDrawerClose} />
     <div id="PhotoContain">
      
       
