@@ -9,7 +9,7 @@ import { Alert} from '@material-ui/lab';
 export default function UploadPhoto() {
   const [photo, setPhoto] = useState({
     image: "",
-    colorScheme: "",
+    layout: "",
     title: "",
     category: "",
     about: "",
@@ -50,7 +50,7 @@ export default function UploadPhoto() {
     event.preventDefault()
   
       axios
-      .post("http://localhost:8080/addPhoto", {"body": photo}, {
+      .post("http://localhost:8080/addPhoto", photo, {
         headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
         
       
@@ -122,18 +122,18 @@ export default function UploadPhoto() {
         <div id="ColorScheme">
           <FormControl variant="outlined" style={{ width: "100%" }}>
             <InputLabel id="demo-simple-select-outlined-label">
-              Image Color
+            Layout
             </InputLabel>
             <Select
-              value={photo.colorScheme}
+              value={photo.layout}
               onChange={handleChange}
-              name="colorScheme"
+              name="layout"
             >
               <MenuItem value="">
-                <em>Color Class</em>
+                <em>Layout</em>
               </MenuItem>
-              <MenuItem value={"Dark"}>Dark</MenuItem>
-              <MenuItem value={"Light"}>Light</MenuItem>
+              <MenuItem value={"Portrait"}>Portrait</MenuItem>
+              <MenuItem value={"Landscape"}>Landscape</MenuItem>
             </Select>
           </FormControl>
         </div>
