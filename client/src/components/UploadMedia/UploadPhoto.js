@@ -13,6 +13,7 @@ import {uploadPhoto, resetSuccessFail} from "../../store/photoActions"
 
 
 
+
 export default function UploadPhoto() {
   const [photo, setPhoto] = useState({
     image: "",
@@ -21,6 +22,19 @@ export default function UploadPhoto() {
     category: "",
     about: "",
   });
+
+  const [cloudinary, setCloudinary] = useState({
+    widget: window.cloudinary.createUploadWidget(
+      {
+        cloudName: process.env.REACT_APP_CLOUDNAME,
+        uploadPreset: process.env.REACT_APP_CLOUDPRESET,
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          setPhoto({ ...photo, image: result.info.url });
+        }
+      })
+  })
   // setting status of photo upload
   const [status, setStatus] = useState({
     success: "",
@@ -39,21 +53,21 @@ export default function UploadPhoto() {
     });
   };
 
-  var widget = window.cloudinary.createUploadWidget(
-    {
-      cloudName: process.env.REACT_APP_CLOUDNAME,
-      uploadPreset: process.env.REACT_APP_CLOUDPRESET,
-    },
-    (error, result) => {
-      if (!error && result && result.event === "success") {
-        setPhoto({ ...photo, image: result.info.url });
-      }
-    }
-  );
+  // var widget = window.cloudinary.createUploadWidget(
+  //   {
+  //     cloudName: process.env.REACT_APP_CLOUDNAME,
+  //     uploadPreset: process.env.REACT_APP_CLOUDPRESET,
+  //   },
+  //   (error, result) => {
+  //     if (!error && result && result.event === "success") {
+  //       setPhoto({ ...photo, image: result.info.url });
+  //     }
+  //   }
+  // );
 
   const handleImageUpload = (event) => {
     event.preventDefault();
-    widget.open();
+    cloudinary.widget.open();
   };
 
   const handleSubmit = (event) => {

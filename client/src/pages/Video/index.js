@@ -1,10 +1,43 @@
-import React from 'react'
-import "./style.css"
+import React, {useEffect} from "react";
+import "./style.css";
+import {useDispatch, useSelector} from "react-redux"
+import {getVideo} from "../../store/videoActions"
+
 
 export default function Video() {
-    return (
-        <div>
-            <p>Video page</p>
+const dispatch = useDispatch()
+const videos = useSelector(state => state.Store.Video.Featured)
+    useEffect(() => {
+        dispatch(getVideo())
+    }, [])
+
+
+
+
+
+
+
+  return (
+    <div className="videoBackground">
+      <br></br>
+      <br></br>
+      <br></br>
+      {videos.map(video => 
+      <div key={video._id} className="videoRow">
+        <div className="videoColumn">
+      <h4 className="videoTitle">{video.title}</h4>
+          <iframe
+            src={video.video}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+          ></iframe>
         </div>
-    )
+      </div>
+      )}
+      
+      
+    </div>
+  );
 }
