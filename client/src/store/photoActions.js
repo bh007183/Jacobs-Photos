@@ -14,9 +14,9 @@ const slice = createSlice({
         setAllPhotos: (Photo, action) => {
             Photo.All = action.payload
         },
-        setCategoryPhotos: (Photo, action) => {
-            Photo.Category = action.payload
-        },
+        // setCategoryPhotos: (Photo, action) => {
+        //     Photo.Category = action.payload
+        // },
 
         setError: (Photo, action) => {
             
@@ -56,6 +56,6 @@ export const uploadPhoto = (data) => apiCallBegan({
 
 export const getPhotoByCategory = (category) => apiCallBegan({
     url: `http://localhost:8080/apiByCategory/${category}`,
-    onSuccess: setCategoryPhotos.type,
+    onSuccess: setAllPhotos.type,
     onError: setError.type,
 })

@@ -19,11 +19,14 @@ const slice = createSlice({
         resetSuccessFail: (Video, action) => {
             Video.Success = "";
             Video.Error = ""
+        },
+        setVideos: (Video, action) => {
+            Video.Featured = action.payload
         }
     }
 })
 
-export const {addVideo, setError, setSuccess, resetSuccessFail} = slice.actions
+export const {addVideo, setError, setSuccess, resetSuccessFail, setVideos} = slice.actions
 
 export default slice.reducer
 // api calls go below
@@ -34,5 +37,10 @@ export const uploadVideo = (data) => apiCallBegan({
     data: data,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setSuccess.type,
+    onError: setError.type,
+})
+export const getVideo = (data) => apiCallBegan({
+    url: "http://localhost:8080/getVideo",
+    onSuccess: setVideos.type,
     onError: setError.type,
 })

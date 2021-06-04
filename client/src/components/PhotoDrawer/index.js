@@ -7,7 +7,7 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import {getPhotoByCategory} from "../../store/photoActions"
+import {getPhotoByCategory, getAllPhotos} from "../../store/photoActions"
 import {useDispatch} from "react-redux"
 
 import "./style.css";
@@ -42,6 +42,9 @@ const handleCategory = (event) => {
             <Divider />
             <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Plants"} />
+            </ListItem>
+            <ListItem onClick={() => dispatch(getAllPhotos())} button>
+              <ListItemText primary={"All"} />
             </ListItem>
           </List>
         </div>

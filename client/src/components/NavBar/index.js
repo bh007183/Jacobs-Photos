@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import logo from "./logo.png"
 
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -25,8 +26,8 @@ export default function NavBar() {
         <div id="NavBar" >
           <div id="NameLogo" className="centerItem">
             <Link id="LogoRouterLink" to="/">
-              
-              NAMELOGO HERE
+            <img src={logo} style={{height: "30px"}} alt="Logo" />
+              {/* NAMELOGO HERE {logo} */}
             </Link>
           </div>
 
