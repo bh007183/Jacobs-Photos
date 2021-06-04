@@ -5,6 +5,7 @@ const slice = createSlice({
     name: "Photo",
     initialState: {
         All: [],
+        EditPhotos: [],
         Category: [],
         Error: "",
         Success: ""
@@ -13,6 +14,9 @@ const slice = createSlice({
        
         setAllPhotos: (Photo, action) => {
             Photo.All = action.payload
+        },
+        setEditPhotos: (Photo, action) => {
+            Photo.EditPhotos = action.payload
         },
         // setCategoryPhotos: (Photo, action) => {
         //     Photo.Category = action.payload
@@ -30,10 +34,15 @@ const slice = createSlice({
             Photo.Error = ''
         }
 
+        // resetSuccessFail: (Photo, action) => {
+        //     Photo.Success = '';
+        //     Photo.Error = ''
+        // }
+
     }
 })
 
-export const {addPhoto, setAllPhotos, setError, setSuccess, resetSuccessFail, setCategoryPhotos} = slice.actions
+export const {addPhoto, setAllPhotos, setError, setSuccess, resetSuccessFail, setCategoryPhotos, setEditPhotos} = slice.actions
 
 export default slice.reducer
 // api calls go below
@@ -57,5 +66,12 @@ export const uploadPhoto = (data) => apiCallBegan({
 export const getPhotoByCategory = (category) => apiCallBegan({
     url: `http://localhost:8080/apiByCategory/${category}`,
     onSuccess: setAllPhotos.type,
+    onError: setError.type,
+})
+
+export const getEditPhotosAdmin = (title) => apiCallBegan({
+    url: `http://localhost:8080/apiEditPhoto/${title}`,
+    headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
+    onSuccess: setEditPhotos.type,
     onError: setError.type,
 })

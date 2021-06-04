@@ -36,11 +36,11 @@ export default function AdminHome() {
         </div>
 
         <div type="button" id="AdminVideoCard">
-          <Link className="ImgLink" to="/manageVideos">
+          <Link className="ImgLink" to="/EditMedia">
             <br></br>
             <div className="imgContain">
               <div id="AdminVideoImg" alt="Video Link">
-                <h1 className="cardText">Manage Video</h1>
+                <h1 className="cardText">Edit Media</h1>
               </div>
             </div>
 

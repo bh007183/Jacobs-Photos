@@ -17,6 +17,7 @@ import MediaUpload from "./pages/AdminPhotoManage"
 import './App.css';
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
+import EditMedia from "./pages/EditMedia"
 const store = configureStore()
 
 function App() {
@@ -52,6 +53,9 @@ function App() {
       </Route>
       <Route exact path="/UploadMedia">
         <MediaUpload/>
+      </Route>
+      <Route exact path="/EditMedia">
+        <EditMedia/>
       </Route>
 
 

@@ -1,0 +1,42 @@
+#EditMediaContain {
+  background: black;
+  min-height: 100vh;
+}
+
+.EditMediaFlex {
+  display: flex;
+  justify-content: center;
+}
+#searchForm {
+  display: flex;
+  margin-top: 70px;
+}
+
+
+
+
+.editImgContain{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+  text-align: center;
+  color: white;
+
+}
+.editImgItem{
+    grid-column: 2/3;
+    max-width: 100%;
+    /* width: 100%; */
+    cursor: pointer;
+}
+.editImgItem:hover{
+    transform: scale(1.05);
+}
+.imgText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

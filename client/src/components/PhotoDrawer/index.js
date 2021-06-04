@@ -19,6 +19,7 @@ const handleCategory = (event) => {
     dispatch(getPhotoByCategory(event.target.outerText))
 }
 
+
   return (
     <>
       <Drawer anchor={"left"} open={props.open} onClose={props.handleClose}>

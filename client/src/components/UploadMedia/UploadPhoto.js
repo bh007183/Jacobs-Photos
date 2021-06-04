@@ -17,6 +17,7 @@ import {uploadPhoto, resetSuccessFail} from "../../store/photoActions"
 export default function UploadPhoto() {
   const [photo, setPhoto] = useState({
     image: "",
+    publicId: "",
     layout: "",
     title: "",
     category: "",
@@ -31,7 +32,7 @@ export default function UploadPhoto() {
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
-          setPhoto({ ...photo, image: result.info.url });
+          setPhoto({ ...photo, image: result.info.url, publicId: result.info.public_id});
         }
       })
   })
