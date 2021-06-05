@@ -31,6 +31,11 @@
     /* width: 100%; */
     
 }
+.editForm{
+  margin: 20px;
+  text-align: center;
+  contain: content;
+}
 .editImgItem:hover{
     transform: scale(1.05);
 }
@@ -39,4 +44,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+#modal{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#deleteBtn{
+  background: red;
+  border:none;
+  
 }

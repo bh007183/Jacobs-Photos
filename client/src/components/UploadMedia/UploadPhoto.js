@@ -24,23 +24,9 @@ export default function UploadPhoto() {
     about: "",
   });
 
-  const [cloudinary, setCloudinary] = useState({
-    widget: window.cloudinary.createUploadWidget(
-      {
-        cloudName: process.env.REACT_APP_CLOUDNAME,
-        uploadPreset: process.env.REACT_APP_CLOUDPRESET,
-      },
-      (error, result) => {
-        if (!error && result && result.event === "success") {
-          setPhoto({ ...photo, image: result.info.url, publicId: result.info.public_id});
-        }
-      })
-  })
+ 
   // setting status of photo upload
-  const [status, setStatus] = useState({
-    success: "",
-    error: "",
-  });
+  
   const dispatch = useDispatch()
   const Success = useSelector(state => state.Store.Photo.Success)
   const Error = useSelector(state => state.Store.Photo.Error)
@@ -54,27 +40,40 @@ export default function UploadPhoto() {
     });
   };
 
-  // var widget = window.cloudinary.createUploadWidget(
-  //   {
-  //     cloudName: process.env.REACT_APP_CLOUDNAME,
-  //     uploadPreset: process.env.REACT_APP_CLOUDPRESET,
-  //   },
-  //   (error, result) => {
-  //     if (!error && result && result.event === "success") {
-  //       setPhoto({ ...photo, image: result.info.url });
-  //     }
-  //   }
-  // );
+  const widget = () =>{
+    window.cloudinary.createUploadWidget(
+      {
+        cloudName: process.env.REACT_APP_CLOUDNAME,
+        uploadPreset: process.env.REACT_APP_CLOUDPRESET,
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          setPhoto({ ...photo, image: result.info.url, publicId: result.info.public_id });
+        }
+      }
+    ).open()
+
+  }
+
+  
 
   const handleImageUpload = (event) => {
     event.preventDefault();
-    cloudinary.widget.open();
+    widget();
   };
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
     dispatch(uploadPhoto(photo))
+    setPhoto({
+      ...photo,
+      image: "",
+    publicId: "",
+    layout: "",
+    title: "",
+    category: "",
+    about: "",
+    });
   
      setTimeout(() => {
       dispatch(resetSuccessFail())

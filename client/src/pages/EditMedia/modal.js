@@ -5,29 +5,46 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import {useSelector} from "react-redux"
+import { Alert} from '@material-ui/lab';
+import "./style.css"
 
 export default function SimpleModal(props) {
     
-  const handleSubmit = () => {};
-  const handleChange = () => {};
+  const Success = useSelector(state => state.Store.Photo.Success)
+  const Error = useSelector(state => state.Store.Photo.Error)
 
   return (
     <Modal
-      style={{width: "50vw"}}
+   
+      
       open={props.open}
       onClose={props.handleClose}
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <div className="EditMediaFlex" style={{background: "purple", width: "50vw"}}>
-        <form onSubmit={handleSubmit} className="editForm">
+      
+      <div  id="modal"  className="EditMediaFlex" style={{background: "purple" }}>
+        
+        <form onSubmit={props.handleSubmit} className="editForm">
+        {Success ? (
+              <Alert style={{width: "100%"}} severity="success">{Success}</Alert>
+            ) : (
+              <></>
+            )}
+            {Error ? (
+              <Alert  style={{width: "100%"}} severity="error">{Error}</Alert>
+            ) : (
+              <></>
+            )}
+        <button onClick={props.handleDelete } type="click" id="deleteBtn">Delete Img</button>
           <div className="editRowGrid">
             <div id="PhotoTitle">
               <input
                 style={{ width: "100%" }}
-                onChange={handleChange}
+                onChange={props.handleChange}
                 name="title"
-                //   value={photo.title}
+                  value={props.obj.title}
                 placeholder="Image Title"
               ></input>
             </div>
@@ -39,8 +56,8 @@ export default function SimpleModal(props) {
                   Category
                 </InputLabel>
                 <Select
-                  // value={photo.category}
-                  // onChange={props.handleChange}
+                  value={props.obj.category}
+                  onChange={props.handleChange}
                   name="category"
                 >
                   <MenuItem value="">
@@ -60,8 +77,8 @@ export default function SimpleModal(props) {
                   Layout
                 </InputLabel>
                 <Select
-                  // value={photo.layout}
-                  onChange={handleChange}
+                  value={props.obj.layout}
+                  onChange={props.handleChange}
                   name="layout"
                 >
                   <MenuItem value="">
@@ -74,29 +91,19 @@ export default function SimpleModal(props) {
             </div>
           </div>
           <div className="editRowGrid">
-            <div id="UploadedImage">
-              {/* <img id="img" src={photo.image}></img> */}
-            </div>
-
-            <div id="widgetOpen">
-              <button type="click">Upload Image</button>
-            </div>
-          </div>
-          <div className="editRowGrid">
             <div id="textAr">
               <textarea
                 style={{ width: "100%" }}
                 placeholder="Whats going on in this photo? "
-                onChange={handleChange}
+                onChange={props.handleChange}
                 name="about"
-                //   value={photo.about}
+                  value={props.obj.about}
               ></textarea>
             </div>
           </div>
           <div className="editRowGrid">
             <div id="submitButton">
               <button style={{ width: "100%" }} type="submit">
-                {" "}
                 Submit
               </button>
             </div>

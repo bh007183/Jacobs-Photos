@@ -6,7 +6,7 @@ const slice = createSlice({
     initialState: {
         All: [],
         EditPhotos: [],
-        Category: [],
+        
         Error: "",
         Success: ""
     },
@@ -18,9 +18,7 @@ const slice = createSlice({
         setEditPhotos: (Photo, action) => {
             Photo.EditPhotos = action.payload
         },
-        // setCategoryPhotos: (Photo, action) => {
-        //     Photo.Category = action.payload
-        // },
+       
 
         setError: (Photo, action) => {
             
@@ -29,20 +27,25 @@ const slice = createSlice({
         setSuccess: (Photo, action) => {
             Photo.Success = action.payload
         },
+
+        setDeleteSuccess: (Photo, action) => {
+            let newArr = Photo.EditPhotos.filter(obj => obj._id !== action.payload._id)
+            Photo.EditPhotos = newArr
+        },
+        resetSuccessFail: (Photo, action) => {
+            Photo.Success = '';
+            Photo.Error = ''
+        },
+
         resetSuccessFail: (Photo, action) => {
             Photo.Success = '';
             Photo.Error = ''
         }
 
-        // resetSuccessFail: (Photo, action) => {
-        //     Photo.Success = '';
-        //     Photo.Error = ''
-        // }
-
     }
 })
 
-export const {addPhoto, setAllPhotos, setError, setSuccess, resetSuccessFail, setCategoryPhotos, setEditPhotos} = slice.actions
+export const {addPhoto, setAllPhotos, setError, setSuccess, resetSuccessFail, setCategoryPhotos, setEditPhotos, setDeleteSuccess} = slice.actions
 
 export default slice.reducer
 // api calls go below
@@ -73,5 +76,22 @@ export const getEditPhotosAdmin = (title) => apiCallBegan({
     url: `http://localhost:8080/apiEditPhoto/${title}`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setEditPhotos.type,
+    onError: setError.type,
+})
+
+export const submitEdit = (obj) => apiCallBegan({
+    url: `http://localhost:8080/apiSubmitPhotoEdit`,
+    headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
+    method: "PUT",
+    data: obj,
+    onSuccess: setSuccess.type,
+    onError: setError.type,
+})
+
+export const deletePhoto = (obj) => apiCallBegan({
+    url: `http://localhost:8080/apiPhotoDelete/${obj._id}/${obj.publicId}`,
+    headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
+    method: "DELETE",
+    onSuccess: setDeleteSuccess.type,
     onError: setError.type,
 })
