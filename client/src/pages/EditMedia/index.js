@@ -3,6 +3,7 @@ import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getEditPhotosAdmin, resetSuccessFail } from "../../store/photoActions";
 import { Alert } from "@material-ui/lab";
+import SimpleModal from "./holder.js"
 
 
 export default function EditMedia() {
@@ -13,7 +14,7 @@ export default function EditMedia() {
   const [search, setSearch] = useState({
     title: "",
   });
-
+  
   const handleChange = (event) => {
     let name = event.target.name;
     let value = event.target.value;
@@ -30,6 +31,20 @@ export default function EditMedia() {
     setTimeout(() => {
       dispatch(resetSuccessFail());
     }, 4000);
+  };
+
+//   modal
+
+const [open, setOpen] = useState({
+    lost: false
+});
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -52,14 +67,15 @@ export default function EditMedia() {
             <div key={index} className="EditMediaFlex">
                 <div className="editImgContain" >
                 <h1 style={{zIndex: "99"}} className="imgText">Edit</h1>
-                <div className="editImgItem">
+                <div onClick={handleOpen} className="editImgItem">
                 
                 <img  src={photo.image} style={{maxWidth: "100%", cursor: "pointer"}}></img>
                
                 </div>
                 </div>
+                <SimpleModal open={open} handleClose={handleClose}  />
             </div>
-  
+
         ))}
 
         {Error ? (
