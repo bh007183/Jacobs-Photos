@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const app = express();
 const cors = require("cors");
 const db = require("./models");
+const path = require("path")
 // Sets up the Express App
 var PORT = process.env.PORT || 8080;
 require("dotenv").config();
@@ -18,7 +19,9 @@ app.use(express.json());
 // corsOptions
 app.use(cors());
 // Static directory
-app.use(express.static("public"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 /////////////////////////////////
 const videoRoutes = require("./routes/video-routes.js")
 const photoRoutes = require("./routes/photo-routes.js")
@@ -32,9 +35,7 @@ app.use(adminRoutes)
 
 // app.use(express.static("client/build"));
 
-// app.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
+
 
 
 mongoose.connect(
@@ -44,6 +45,11 @@ mongoose.connect(
     useFindAndModify: false
   });
 
+
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
 
 
   app.listen(PORT, function () {
