@@ -25,13 +25,21 @@
     background: rgba(71, 1, 1, 0.2);
     backdrop-filter: blur(3px);
     border-radius: 20px;
-    
-    
-
-    
-
-
 }
+
+#ownerAccess{
+    
+    font-size: 9px; 
+    color: white; 
+    
+}
+#ownerLinkContain{
+    width: 100%;
+    grid-column: 1/13;
+   
+}
+
+
 
 .ImgLink{
     color: white;
@@ -84,7 +92,20 @@
 }
 
 
+@media only screen and (min-width: 870px){
+    #ownerAccess{
+        position: fixed;
+        bottom: 1vh;
+        left: 2%;
 
+    }
+    #ownerLinkContain{
+        
+        grid-column: none;
+       
+    }
+    
+}
 
 
 
@@ -116,5 +137,6 @@
         width: 100vw;
         
     }
+    
     
   }
