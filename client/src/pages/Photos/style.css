@@ -1,0 +1,75 @@
+#photobackground {
+  background-color: black;
+  height: 100vh;
+}
+
+#PhotoContain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+
+
+ .hover:hover{
+    transform: scale(1.05);
+   
+  }
+  
+  
+
+.Landscape {
+  
+
+  max-height: 275px;
+}
+.Portrait {
+ 
+  max-height: 300px;
+}
+.PortraitBack{
+  height: 300px;
+  width: 200px;
+  background: rgb(173, 170, 170);
+text-align: center;
+}
+
+.LandscapeBack{
+  height: 275px;
+  
+  background: rgb(173, 170, 170);
+text-align: center;
+
+
+}
+@media only screen and (max-width: 870px) {
+  .Landscape {
+    max-width: 100vw;
+  }
+  .Portrate {
+    max-width: 100vw;
+  }
+}
+
+
+/* slider button for categories */
+
+#categoryButton{
+  width: 30px;
+  height: 100px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius:50px;
+  position: fixed;
+  top: 60px;
+  z-index: 99;
+  
+}
+
+#vertical{
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 0%;
+  margin: 0%;
+}

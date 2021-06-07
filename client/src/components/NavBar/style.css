@@ -1,0 +1,75 @@
+#NavBar{
+    width: 100vw;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background: rgba(71, 1, 1, 0.2);
+    backdrop-filter: blur(3px);
+    position: fixed !important;
+    top: 0!important;
+    z-index:99;
+}
+
+.centerItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#NameLogo{
+    grid-column: 2/4;
+    
+}
+#Photos{
+    grid-column: 7;
+}
+#Video{
+    grid-column: 8;
+}
+#About{
+    grid-column: 9;
+}
+#Contact{
+    grid-column: 10;
+}
+#Slider{
+    grid-column: 11/12;
+    display: none;
+}
+
+/* For Header Photo */
+
+
+
+/* For setting Link Style */
+
+.RouterLink{
+    color: white;
+    text-decoration: none;
+}
+#LogoRouterLink{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 870px) {
+    
+    .RouterLink{
+        display: none;
+    } 
+    #Slider{
+        display: block;
+    }
+
+    
+    
+  }

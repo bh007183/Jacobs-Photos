@@ -1,0 +1,21 @@
+.DrawerRouterLink{
+    
+    text-decoration: none;
+    color: white;
+}
+
+/* Material Ui Class to attach styling to drawer */
+
+.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 {
+    top:60px !important;
+    height: 70vh;
+    background-color: rgb(255, 59, 222);
+    border-top-right-radius: 20px;
+  border-bottom-right-radius:20px;
+   
+  }
+
+  /* .MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiDrawer-paperAnchorDockedLeft.MuiPaper-elevation0{
+    top:6px !important;
+    height: 70vh;
+  } */
