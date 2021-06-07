@@ -44,13 +44,13 @@ export const {setAdmin, setError, setSuccess, onAdminChange, Reset} = slice.acti
 export default slice.reducer
 
 export const  getAdmin = () => apiCallBegan({
-    url: "https://jacobsportfolio1234.herokuapp.com/getAdminAPi", 
+    url: "http://localhost:8080/getAdminAPi", 
     headers: {authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setAdmin.type,
     onError: setError.type
 })
 export const  UpdateAdmin = (Admin) => apiCallBegan({
-    url: "https://jacobsportfolio1234.herokuapp.com/UpdateAdminAPi", 
+    url: "http://localhost:8080/UpdateAdminAPi", 
     headers: {authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "PUT",
     data: Admin,
