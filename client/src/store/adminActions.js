@@ -4,16 +4,40 @@ import {apiCallBegan} from "./apiActions"
 const slice = createSlice({
     name: "Admin",
     initialState: {
-        Featured: []
+        
+        AdminUser: {
+            username: "",
+            email: "",
+            oldPassword: "",
+            newPassword: "",
+            verifyPassword: ""
+        },
+        Error: ""
     },
     reducers:{
         setAdmin: (Admin, action) => {
-            Admin.Featured.push(action.payload)
+            Admin.AdminUser.username = action.payload.username;
+            Admin.AdminUser.email = action.payload.email
+        },
+
+        setError: (Admin, action) => {
+            Admin.Error = action.payload
+        },
+        onAdminChange: (Admin, action) => {
+
+            
+
         }
     }
 })
 
-export const {addAdmin} = slice.actions
+export const {setAdmin, setError} = slice.actions
 
 export default slice.reducer
-// api calls go below
+
+export const  getAdmin = () => apiCallBegan({
+    url: "http://localhost:8080/getAdminAPi", 
+    headers: {authorization: "Bearer: " + localStorage.getItem("Token")},
+    onSuccess: setAdmin.type,
+    onError: setError.type
+})

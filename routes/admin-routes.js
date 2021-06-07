@@ -75,4 +75,39 @@ router.get("/adminAccessAuthorized", async (req, res) => {
     }
   });
 
+
+
+router.get("/getAdminAPi", async (req, res) => {
+
+    let token = false;
+    if (!req.headers) {
+      token = false;
+    } else if (!req.headers.authorization) {
+      token = false;
+    } else {
+      token = req.headers.authorization.split(" ")[1];
+    }
+    if (!token) {
+      res.status(500).send("Please Login");
+    } else {
+      const data = await jwt.verify(
+        req.headers.authorization.split(" ")[1],
+        process.env.JWS_TOKEN,
+        (err, data) => {
+          if (err) {
+            res.status(401).send("Unauthorised. Please Login.");
+          } else {
+            return data;
+          }
+        }
+      );
+      if (data) {
+        let resData = db.Admin.findById(data.id).catch(err => res.status(401).send("Unable to retrieve user."))
+        res.status(200).json(resData)
+      } else {
+        res.status(403).send("Session Expired. Please Login.");
+      }
+    }
+  });
+
 module.exports = router;

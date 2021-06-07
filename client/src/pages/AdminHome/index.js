@@ -50,7 +50,7 @@ export default function AdminHome() {
       </div>
       <div className="secCardContain">
         <div id="AdminManageCard">
-          <Link className="ImgLink" to="/manageProfile">
+          <Link className="ImgLink" to="/AdminEdit">
             <br></br>
             <div className="imgContain">
               <div id="AdminProfilePhotoImg" alt="Photo Link">

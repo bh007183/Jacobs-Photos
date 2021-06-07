@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require('mongoose')
 const app = express();
 const cors = require("cors");
-const db = require("./models");
 const path = require("path")
 // Sets up the Express App
 var PORT = process.env.PORT || 8080;
@@ -32,8 +31,6 @@ const adminRoutes = require("./routes/admin-routes.js")
 app.use(videoRoutes)
 app.use(photoRoutes)
 app.use(adminRoutes)
-
-// app.use(express.static("client/build"));
 
 
 

@@ -14,6 +14,7 @@ import AdminLogin from "./pages/AdminLogin"
 import AdminHome from "./pages/AdminHome"
 import Error from "./pages/Unauthorized"
 import MediaUpload from "./pages/AdminPhotoManage"
+import AdminEdit from "./pages/AdminEdit"
 import './App.css';
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
@@ -56,6 +57,9 @@ function App() {
       </Route>
       <Route exact path="/EditMedia">
         <EditMedia/>
+      </Route>
+      <Route exact path="/AdminEdit">
+        <AdminEdit/>
       </Route>
 
 
