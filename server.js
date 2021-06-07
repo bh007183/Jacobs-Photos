@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var corsOptions = {
-  origin: 'https://jacobsportfolio1234.herokuapp.com/'
+  origin: 'https://jacobsportfolio1234.herokuapp.com'
 }
 // corsOptions
 app.use(cors(corsOptions));
