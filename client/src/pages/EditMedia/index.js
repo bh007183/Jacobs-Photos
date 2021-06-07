@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getEditPhotosAdmin, resetSuccessFail, submitEdit, deletePhoto } from "../../store/photoActions";
 import { Alert } from "@material-ui/lab";
 import SimpleModal from "./modal.js"
-
+import Authentication from "../../Functions/Authentication"
 
 
 export default function EditMedia() {
@@ -15,6 +15,10 @@ export default function EditMedia() {
   const [search, setSearch] = useState({
     title: "",
   });
+
+  useEffect(() => {
+   Authentication()
+  }, [])
   
   const handleChange = (event) => {
     let name = event.target.name;

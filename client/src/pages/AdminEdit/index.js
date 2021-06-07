@@ -8,6 +8,7 @@ import {
 } from "../../store/adminActions";
 import AlertStatus from "../../components/AlertStatus";
 import "./style.css";
+import Authentication from "../../Functions/Authentication"
 
 export default function AdminEdit() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export default function AdminEdit() {
   const [checked, setChecked] = useState(true);
 
   useEffect(() => {
+    Authentication()
     dispatch(getAdmin());
   }, []);
 

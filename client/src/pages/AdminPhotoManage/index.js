@@ -5,6 +5,7 @@ import UploadVideo from "../../components/UploadMedia/UploadVideo"
 import Fab from "@material-ui/core/Fab"
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import DuoIcon from '@material-ui/icons/Duo';
+import Authentication from "../../Functions/Authentication"
 
 
 
@@ -14,6 +15,10 @@ import ReactCardFlip from 'react-card-flip';
 export default function MediaUpload() {
 //setting state of photo upload
   
+useEffect(() => {
+  Authentication()
+  
+}, [])
 
 // setting status of flip
 

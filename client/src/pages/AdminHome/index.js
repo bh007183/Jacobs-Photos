@@ -2,22 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"
 import "./style.css"
+import Authentication from "../../Functions/Authentication"
 
 
 
 export default function AdminHome() {
 
-    // useEffect(() => {
-    //     axios.get("http://localhost:8080/adminAccessAuthorized", {
-    //         headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
-    //     }).then(res => {
+    useEffect(() => {
+   Authentication()
 
-    //     }).catch(err => {
-    //         window.location.href = "/error"
-            
-    //     })
-
-    // }, [])
+    }, [])
 
 
   return (

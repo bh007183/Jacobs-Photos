@@ -19,7 +19,7 @@ import './App.css';
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import EditMedia from "./pages/EditMedia"
-import Temp from "./pages/createAccount"
+
 const store = configureStore()
 
 function App() {
@@ -62,9 +62,7 @@ function App() {
       <Route exact path="/AdminEdit">
         <AdminEdit/>
       </Route>
-      <Route exact path="/create">
-        <Temp/>
-      </Route>
+     
 
 
     </Router>
