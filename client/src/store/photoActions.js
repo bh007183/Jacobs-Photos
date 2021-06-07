@@ -52,13 +52,13 @@ export default slice.reducer
 
 
 export const getAllPhotos = () => apiCallBegan({
-url: "http://localhost:8080/getImages",
+url: "https://jacobsportfolio1234.herokuapp.com/getImages",
 onSuccess: setAllPhotos.type,
 onError: setError.type
 })
 
 export const uploadPhoto = (data) => apiCallBegan({
-    url: "http://localhost:8080/addPhoto",
+    url: "https://jacobsportfolio1234.herokuapp.com/addPhoto",
     method: "POST",
     data: data,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
@@ -67,20 +67,20 @@ export const uploadPhoto = (data) => apiCallBegan({
 })
 
 export const getPhotoByCategory = (category) => apiCallBegan({
-    url: `http://localhost:8080/apiByCategory/${category}`,
+    url: `https://jacobsportfolio1234.herokuapp.com/apiByCategory/${category}`,
     onSuccess: setAllPhotos.type,
     onError: setError.type,
 })
 
 export const getEditPhotosAdmin = (title) => apiCallBegan({
-    url: `http://localhost:8080/apiEditPhoto/${title}`,
+    url: `https://jacobsportfolio1234.herokuapp.com/apiEditPhoto/${title}`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setEditPhotos.type,
     onError: setError.type,
 })
 
 export const submitEdit = (obj) => apiCallBegan({
-    url: `http://localhost:8080/apiSubmitPhotoEdit`,
+    url: `https://jacobsportfolio1234.herokuapp.com/apiSubmitPhotoEdit`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "PUT",
     data: obj,
@@ -89,7 +89,7 @@ export const submitEdit = (obj) => apiCallBegan({
 })
 
 export const deletePhoto = (obj) => apiCallBegan({
-    url: `http://localhost:8080/apiPhotoDelete/${obj._id}/${obj.publicId}`,
+    url: `https://jacobsportfolio1234.herokuapp.com/apiPhotoDelete/${obj._id}/${obj.publicId}`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "DELETE",
     onSuccess: setDeleteSuccess.type,

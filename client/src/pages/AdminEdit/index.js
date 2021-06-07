@@ -1,54 +1,128 @@
-import React, {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from "react-redux"
-import {getAdmin} from "../../store/adminActions"
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAdmin,
+  onAdminChange,
+  UpdateAdmin,
+  Reset,
+} from "../../store/adminActions";
+import AlertStatus from "../../components/AlertStatus";
+import "./style.css";
 
 export default function AdminEdit() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const Admin = useSelector(state => state.Store.Admin.AdminUser)
-    const Error = useSelector(state => state.Store.Admin.Error)
-// const [admin, setAdmin] = useState({
-//     username: "",
-//     email: "",
-//     oldPassword: "",
-//     newPassword: "",
-//     verifyPassword: ""
-// })
+  const Admin = useSelector((state) => state.Store.Admin.AdminUser);
+  const Error = useSelector((state) => state.Store.Admin.Error);
+  const Success = useSelector((state) => state.Store.Admin.Success);
 
-// const handleChange = (event) => {
-//  let name = event.target.name;
-//  let value = event.target.value;
-//  setAdmin({
-//      ...admin, [name]: value
-//  })
-// }
+  const [checked, setChecked] = useState(true);
 
-// if(Admin !== {}){
-//     setAdmin({
-//         ...admin, username: Admin.username, email: Admin.email
-//     })
-// }
+  useEffect(() => {
+    dispatch(getAdmin());
+  }, []);
 
-    useEffect(() => {
-        dispatch(getAdmin())
-        
-    }, [])
+  const handleChange = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+    dispatch(onAdminChange({ name: name, value: value }));
+  };
 
-    return (
-        <div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <input onChange={handleChange} name="username" value={Admin.username} id="editUsername"></input>
-            <input onChange={handleChange} name="email" value={Admin.email} id="editEmail"></input>
-            <input onChange={handleChange} name="oldPassword" value={Admin.oldPassword} id="oldPassword"></input>
-            <input onChange={handleChange} name="newPassword" value={Admin.newPassword} id="newPassword"></input>
-            <input onChange={handleChange} name="verifyPassword" value={Admin.verifyPassword} id="verifyPassword"></input>
+  const handleCheckbox = (event) => {
+    if (checked === true) {
+      setChecked(false);
+    } else {
+      setChecked(true);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (Admin.oldPassword !== "") {
+      dispatch(UpdateAdmin(Admin));
+      setTimeout(() => {
+        dispatch(Reset());
+      }, 4000);
+    } else {
+      alert("Current Password Required");
+    }
+  };
+
+  return (
+    <div className="EditAdminContain">
+      
+      <form onSubmit={handleSubmit} id="EditAdminForm">
+      <div className="EditInputContain">
+      <AlertStatus Success={Success} Error={Error} />
+      </div>
+        <div className="EditInputContain">
+          <input
+            onChange={handleChange}
+            name="username"
+            placeholder="Username"
+            value={Admin.username}
+            id="editUsername"
+          ></input>
         </div>
-    )
+
+        <div className="EditInputContain">
+          <input
+            onChange={handleChange}
+            name="email"
+            placeholder="Email"
+            value={Admin.email}
+            id="editEmail"
+          ></input>
+        </div>
+
+        <div className="EditInputContain">
+          <input
+            onChange={handleChange}
+            name="oldPassword"
+            placeholder="Current Password"
+            value={Admin.oldPassword}
+            id="oldPassword"
+          ></input>
+        </div>
+
+        <div className="EditInputContain">
+          <p style={{ color: "white" }}>Edit Password?</p>
+          <input
+            type="checkbox"
+            onChange={handleCheckbox}
+            name="oldPassword"
+            placeholder="Enter Old Password"
+            value={checked}
+            id="oldPassword"
+          ></input>
+        </div>
+
+        <div className="EditInputContain">
+          {" "}
+          <input
+            onChange={handleChange}
+            name="newPassword"
+            placeholder="Enter New Password"
+            value={Admin.newPassword}
+            id="newPassword"
+            disabled={checked}
+          ></input>
+        </div>
+
+        <div className="EditInputContain">
+          <input
+            onChange={handleChange}
+            name="verifyPassword"
+            placeholder="Verify New Password"
+            value={Admin.verifyPassword}
+            id="verifyPassword"
+            disabled={checked}
+          ></input>
+        </div>
+        <div className="EditInputContain">
+          <button type="submit">Enter</button>
+        </div>
+      </form>
+    </div>
+  );
 }

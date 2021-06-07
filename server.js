@@ -12,11 +12,11 @@ require("dotenv").config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// var corsOptions = {
-//   origin: 'https://bjh-hop-estore.herokuapp.com'
-// }
+var corsOptions = {
+  origin: 'https://jacobsportfolio1234.herokuapp.com/'
+}
 // corsOptions
-app.use(cors());
+app.use(cors(corsOptions));
 // Static directory
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
