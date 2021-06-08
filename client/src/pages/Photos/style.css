@@ -1,6 +1,6 @@
 #photobackground {
   background-color: black;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #PhotoContain {
@@ -38,6 +38,7 @@ text-align: center;
 
 .LandscapeBack{
   height: 275px;
+  width: 200px;
   
   background: rgb(173, 170, 170);
 text-align: center;

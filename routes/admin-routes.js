@@ -5,23 +5,32 @@ const saltRounds = 10;
 const jwt = require("jsonwebtoken");
 
 
-router.post("/createaccount", async (req, res) => {
-  const hash = await bcrypt.hashSync(req.body.password, saltRounds);
-  await db.Admin.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: hash
-  })
-  res.status(200)
-})
+// router.post("/createaccount", async (req, res) => {
+//   const hash = await bcrypt.hashSync(req.body.password, saltRounds);
+//   await db.Admin.create({
+//     username: req.body.username,
+//     email: req.body.email,
+//     password: hash
+//   })
+//   res.status(200)
+// })
 
 router.post("/adminLoginApi", async (req, res) => {
+  
   const data = await db.Admin.findOne({
     username: req.body.data.username,
-  }).catch((err) => res.status(409).send("No Known User!"));
-  await console.log(data);
-
-  const match = await bcrypt.compareSync(req.body.data.password, data.password);
+  }, (err, data) => {
+    if(err){
+      res.status(401).send("Issue with authentication!")
+    }else{
+      return data
+    }
+  })
+  console.log(data)
+  
+  if(data){
+  const match = await bcrypt.compare(req.body.data.password, data.password).catch(err => res.status(401).send("No Such User!"))
+  
   if (match) {
     jwt.sign(
       {
@@ -41,7 +50,11 @@ router.post("/adminLoginApi", async (req, res) => {
   } else {
     res.status(401).send("No Such User!");
   }
+  }else{
+    res.status(401).send("Username Invalid")
+  }
 });
+
 
 router.get("/adminAccessAuthorized", async (req, res) => {
   let token = false;
@@ -73,6 +86,8 @@ router.get("/adminAccessAuthorized", async (req, res) => {
     }
   }
 });
+
+
 
 router.get("/getAdminAPi", async (req, res) => {
   let token = false;
@@ -110,7 +125,6 @@ router.get("/getAdminAPi", async (req, res) => {
 });
 
 router.put("/UpdateAdminAPi", async (req, res) => {
-  console.log(req.body.oldPassword)
   let token = false;
   if (!req.headers) {
     token = false;
@@ -137,22 +151,9 @@ router.put("/UpdateAdminAPi", async (req, res) => {
       const findUser = await db.Admin.findById(data.id).catch((err) =>
         res.status(401).send("Could not find user.")
       );
-      console.log(findUser)
-      let match;
-      try {
-        match = await bcrypt
-          .compareSync(req.body.oldPassword, findUser.password, (err, result) => {
-            if (err) {
-              res.status(401).send("Password not authorized.")
-              console.log(134);
-            } else {
-              return result;
-            }
-          })
+      const match = await bcrypt
+          .compare(req.body.oldPassword, findUser.password).catch(err => res.status(401).send("Invalid Password"))
           
-      } catch (err) {
-        res.status(401).send("Password Authentication Required.")
-      }
       if(!match){
         res.status(401).send("Your Current Password is incorrect.")
       }

@@ -23,7 +23,6 @@ export default function AdminLogin() {
     }
 
     const handleSubmit = (event) => {
-        console.log(userState)
         event.preventDefault()
         axios.post("http://localhost:8080/adminLoginApi", {
             data: userState,
@@ -32,8 +31,7 @@ export default function AdminLogin() {
             localStorage.setItem("Token", res.data.token)
             window.location.href = "/adminAccess"
         }).catch(err => {
-            alert(err)
-            // .response.data
+            alert(err.response.data)
         })
     }
 

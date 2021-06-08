@@ -19,7 +19,7 @@ router.post("/addVideo", async (req, res) => {
       process.env.JWS_TOKEN,
       (err, data) => {
         if (err) {
-          res.status(401);
+          res.status(401).send("Session Expired. Please Login.");
         } else {
           return data;
         }

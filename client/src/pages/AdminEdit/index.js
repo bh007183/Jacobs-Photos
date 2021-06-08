@@ -79,6 +79,7 @@ export default function AdminEdit() {
 
         <div className="EditInputContain">
           <input
+          type="password"
             onChange={handleChange}
             name="oldPassword"
             placeholder="Current Password"
@@ -102,6 +103,7 @@ export default function AdminEdit() {
         <div className="EditInputContain">
           {" "}
           <input
+          type="password"
             onChange={handleChange}
             name="newPassword"
             placeholder="Enter New Password"
@@ -113,6 +115,8 @@ export default function AdminEdit() {
 
         <div className="EditInputContain">
           <input
+          type="password"
+          
             onChange={handleChange}
             name="verifyPassword"
             placeholder="Verify New Password"

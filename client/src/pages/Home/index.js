@@ -4,15 +4,18 @@ import "./style.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import {useDispatch, useSelector} from "react-redux" 
+import {getFeatured} from "../../store/photoActions"
 
 
 
 
 
 export default function Home() {
-
+    const dispatch = useDispatch()
     let images = useSelector(state => state.Store.Photo.All)
-    console.log(images)
+    useEffect(() => {
+      dispatch(getFeatured())
+    }, [])
 
 
 
@@ -23,24 +26,20 @@ export default function Home() {
 
            <div id="background">
             <div id="carousel" >
-
             <Carousel autoPlay={true} interval={5000} infiniteLoop={true}>
 
                 {images.map(img => 
                    
                             <div >
-                        <img  src={img.image}  ></img>
+                        <img   src={img.image}  ></img>
 
                           </div>
-                        )
+                       )
 
                     
                     
                 }
-
-                
             </Carousel>
-
             </div>
             </div>
 

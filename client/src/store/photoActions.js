@@ -95,3 +95,8 @@ export const deletePhoto = (obj) => apiCallBegan({
     onSuccess: setDeleteSuccess.type,
     onError: setError.type,
 })
+export const getFeatured = () => apiCallBegan({
+    url: `http://localhost:8080/getFeatured`,
+    onSuccess: setAllPhotos.type,
+    onError: setError.type,
+})

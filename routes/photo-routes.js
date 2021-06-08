@@ -45,12 +45,30 @@ router.post("/addPhoto", async (req, res) => {
 });
 
 router.get("/getImages", async (req, res) => {
-  let data = await db.Photo.find({})
+  let data = await db.Photo.find()
     .sort({ createdAt: -1 })
     .catch((err) =>
       res.status(404).send("There was an issue retreiving images")
     );
-  res.status(200).json(data);
+  if(data){
+    res.status(200).json(data);
+  }else{
+    res.status(500).send("Unknown error")
+  }
+  
+});
+
+router.get("/getFeatured", async (req, res) => {
+  let data = await db.Photo.find({category: "Featured", layout: "Landscape"})
+    .sort({ createdAt: -1 })
+    .catch((err) =>
+      res.status(404).send("There was an issue retreiving images")
+    );
+    if(data){
+      res.status(200).json(data);
+    }else{
+      res.status(500).send("Unknown error")
+    }
 });
 
 router.get("/apiByCategory/:category", async (req, res) => {
@@ -89,13 +107,13 @@ router.get("/apiEditPhoto/:title", async (req, res) => {
     if (data) {
       const regex = new RegExp(req.params.title, "i");
 
-      let resData = await db.Photo.find({
+      let resPhoto = await db.Photo.find({
         title: { $regex: regex },
       }).catch((err) =>
         res.status(409).send("Image Upload Fail. Make sure you are logged in.")
       );
-
-      res.status(200).json(resData);
+      
+      res.status(200).json(resPhoto);
     } else {
       res.status(403).send("Session Expired. Please Login.");
     }
