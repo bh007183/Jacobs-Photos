@@ -1,12 +1,54 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-export default function index() {
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import {useDispatch, useSelector} from "react-redux" 
+
+
+
+
+
+export default function Home() {
+
+    let images = useSelector(state => state.Store.Photo.All)
+    console.log(images)
+
+
+
   return (
     <div className="headerPhoto">
       
         <div id="CardContain">
-          <div id="photoCard">
+
+           <div id="background">
+            <div id="carousel" >
+
+            <Carousel autoPlay={true} interval={5000} infiniteLoop={true}>
+
+                {images.map(img => 
+                   
+                            <div >
+                        <img  src={img.image}  ></img>
+
+                          </div>
+                        )
+
+                    
+                    
+                }
+
+                
+            </Carousel>
+
+            </div>
+            </div>
+
+
+
+
+
+          {/* <div id="photoCard">
             <Link className="ImgLink" to="/photos">
               <br></br>
               <div className="imgContain">
@@ -29,10 +71,15 @@ export default function index() {
 
               <br></br>
             </Link>
-          </div>
+          </div> */}
+
+
+
+
+
           <div id="ownerLinkContain">
           <Link id="ownerAccess" to="/AdminLogin">
-            <p>Owner</p>
+            <p >Owner</p>
           </Link>
           </div>
 

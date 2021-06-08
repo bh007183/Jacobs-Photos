@@ -16,16 +16,29 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: absolute;
-    top: 25%;
+    /* top: 25%; */
+    top:10%;
     width: 100vw;
     
 }
-#photoCard{
+#carousel{
+    
+}
+#background{
+    grid-column: 4/10;
+    background: rgba(71, 1, 1, 0.2);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+/* #photoCard{
     grid-column: 2/6;
     background: rgba(71, 1, 1, 0.2);
     backdrop-filter: blur(3px);
     border-radius: 20px;
-}
+} */
 
 #ownerAccess{
     
@@ -41,11 +54,11 @@
 
 
 
-.ImgLink{
+/* .ImgLink{
     color: white;
     text-decoration: none;
-}
-#videoCard{
+} */
+/* #videoCard{
     grid-column: 8/12;
     background: rgba(71, 1, 1, 0.2);
     backdrop-filter: blur(2px);
@@ -53,15 +66,15 @@
     
     
 
-}
+} */
 
 
-.imgContain{
+/* .imgContain{
     height: auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-}
-
+} */
+/* 
 #videoImg{
     
     background:url("../../Assets/jacobsPhotos/lantern.jpg");
@@ -73,8 +86,8 @@
     background-size: cover;
     border-radius: 20px;
     
-}
-#photoImg{
+} */
+/* #photoImg{
     background:url("../../Assets/jacobsPhotos/Robin-Lake.jpg"); 
     margin: 0 auto;
     width: 80%;
@@ -82,14 +95,16 @@
     background-size: cover;
     border-radius: 20px;
 
-}
+} */
 
-.cardText{
+
+
+/* .cardText{
     color: whitesmoke;
     text-align: center;
     position: relative;
     top: 70%
-}
+} */
 
 
 @media only screen and (min-width: 870px){
@@ -108,12 +123,16 @@
 }
 
 
-
+@media only screen and (min-width: 1565px){
+    #background{
+        grid-column: 5/9
+    }
+}
 @media only screen and (max-width: 870px) {
     
   
 
-    #photoCard{
+    /* #photoCard{
         grid-column: 3/11;
         background: rgba(71, 1, 1, 0.2);
         backdrop-filter: blur(3px);
@@ -128,15 +147,18 @@
       
         
     
-    }
+    } */
     #CardContain{
-        /* display: grid; */
-        grid-template-columns: repeat(12, 1fr);
+        display: block;
+        contain: content;
+       
         position: absolute;
         top: 15%;
         width: 100vw;
         
     }
+
+ 
     
     
   }

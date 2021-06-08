@@ -10,10 +10,6 @@ import {useDispatch, useSelector} from "react-redux"
 import {uploadPhoto, resetSuccessFail} from "../../store/photoActions"
 
 
-
-
-
-
 export default function UploadPhoto() {
   const [photo, setPhoto] = useState({
     image: "",
@@ -45,10 +41,13 @@ export default function UploadPhoto() {
       {
         cloudName: process.env.REACT_APP_CLOUDNAME,
         uploadPreset: process.env.REACT_APP_CLOUDPRESET,
+        // api_key: process.env.REACT_APP_APIKEY,
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
           setPhoto({ ...photo, image: result.info.url, publicId: result.info.public_id });
+        }else{
+          console.log(error)
         }
       }
     ).open()
@@ -59,6 +58,8 @@ export default function UploadPhoto() {
 
   const handleImageUpload = (event) => {
     event.preventDefault();
+    
+    console.log(process.env.REACT_APP_CLOUDPRESET)
     widget();
   };
 
