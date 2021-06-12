@@ -44,6 +44,7 @@ const handleCategory = (event) => {
             <ListItem onClick={handleCategory} button>
               <ListItemText primary={"Plants"} />
             </ListItem>
+            <Divider />
             <ListItem onClick={() => dispatch(getAllPhotos())} button>
               <ListItemText primary={"All"} />
             </ListItem>

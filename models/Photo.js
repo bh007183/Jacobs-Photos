@@ -8,7 +8,8 @@ const photoSchema = new mongoose.Schema({
   layout: { type: String},
   category: { type: String},
   about: { type: String},
-  publicId: {type: String}
+  publicId: {type: String},
+  featured: {type: Boolean, default: false}
 
 });
 const Photo = mongoose.model("Photo", photoSchema)
