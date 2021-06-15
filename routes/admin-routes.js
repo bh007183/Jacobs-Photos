@@ -3,6 +3,7 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer")
 
 
 // router.post("/createaccount", async (req, res) => {
@@ -183,5 +184,42 @@ router.put("/UpdateAdminAPi", async (req, res) => {
     }
   }
 });
+
+
+async function mailer(req, res){
+
+  let transporter = await nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: process.env.EMAIL_USERNAME, // generated ethereal user
+      pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+    },
+  });
+  
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: `${req.body.name} <${req.body.email}>`, // sender address
+    to: "jacobhopkinsphoto@gmail.com", // list of receivers
+    subject: "Image Inquiry", // Subject line
+    html: `<h4>${req.body.name}</h4><h5>${req.body.phone}</h5><h5>${req.body.email}</h5><br><p>${req.body.message}</p> ` // html body
+  });
+  if(info){
+    res.status(200).send("Thank you for your message! I will respond as soon as possible!")
+  }
+  
+
+}
+
+
+router.post("/emailAdmin", (req, res) => {
+    
+    // create reusable transporter object using the default SMTP transport
+    mailer(req, res).catch(err => res.status(500).send("Sorry! There was an issue with this system. Please send an email from your personal account to jacobhopkinsphoto@gmail.com"))
+    
+    
+})
 
 module.exports = router;

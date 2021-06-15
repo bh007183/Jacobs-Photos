@@ -1,0 +1,21 @@
+.contactContain{
+    height: 100vh;
+    background-color: black;
+}
+#contactForm{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30%;
+    
+}
+.inputItem{
+display: flex;
+justify-content: center;
+margin-top: 5%;
+}
+#sendersMessage{
+resize: none;
+width: 400px;
+}

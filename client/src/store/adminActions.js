@@ -13,7 +13,9 @@ const slice = createSlice({
             verifyPassword: ""
         },
         Error: "",
-        Success: ""
+        Success: "",
+        NodeMailerError: "",
+        NodeMailerSuccess: ""
     },
     reducers:{
         setAdmin: (Admin, action) => {
@@ -28,6 +30,12 @@ const slice = createSlice({
         setSuccess: (Admin, action) => {
             Admin.Success = action.payload
         },
+        setNodeError: (Admin, action) => {
+            Admin.NodeMailerError = action.payload.data
+        },
+        setNodeSuccess: (Admin, action) => {
+            Admin.NodeMailerSuccess = action.payload
+        },
         onAdminChange: (Admin, action) => {
             Admin.AdminUser[action.payload.name] = action.payload.value
         },
@@ -39,7 +47,7 @@ const slice = createSlice({
     }
 })
 
-export const {setAdmin, setError, setSuccess, onAdminChange, Reset} = slice.actions
+export const {setAdmin, setError, setSuccess, onAdminChange, Reset, setNodeError, setNodeSuccess} = slice.actions
 
 export default slice.reducer
 
@@ -56,4 +64,12 @@ export const  UpdateAdmin = (Admin) => apiCallBegan({
     data: Admin,
     onSuccess: setSuccess.type,
     onError: setError.type
+})
+
+export const emailAdmin = (data) => apiCallBegan({
+    url: "http://localhost:8080/emailAdmin", 
+    method: "POST",
+    data: data,
+    onSuccess: setNodeSuccess.type,
+    onError: setNodeError.type
 })
