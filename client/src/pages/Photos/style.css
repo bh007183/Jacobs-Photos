@@ -32,15 +32,15 @@
 .PortraitBack{
   height: 300px;
   width: 200px;
-  background: rgb(173, 170, 170);
+  background: rgba(134, 127, 127, 0.2);
 text-align: center;
 }
 
 .LandscapeBack{
   height: 275px;
-  width: 200px;
+  width: 350px;
+  background: rgba(134, 127, 127, 0.2);
   
-  background: rgb(173, 170, 170);
 text-align: center;
 
 
@@ -65,6 +65,7 @@ text-align: center;
   position: fixed;
   top: 60px;
   z-index: 99;
+  border: 0
   
 }
 

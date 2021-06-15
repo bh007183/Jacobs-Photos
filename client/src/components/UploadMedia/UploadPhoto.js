@@ -41,7 +41,6 @@ export default function UploadPhoto() {
       {
         cloudName: process.env.REACT_APP_CLOUDNAME,
         uploadPreset: process.env.REACT_APP_CLOUDPRESET,
-        // api_key: process.env.REACT_APP_APIKEY,
       },
       (error, result) => {
         if (!error && result && result.event === "success") {

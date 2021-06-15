@@ -4,7 +4,7 @@
     background-position: top;
     background-repeat: no-repeat;
     contain: content;
-    overflow: scroll;
+    /* overflow: scroll; */
    
   
   background-size: cover;
@@ -12,10 +12,6 @@
   
 }
   /* home cards */
-
-
-
-
 
 #ownerAccess{
     
@@ -31,6 +27,66 @@
     grid-column: 1/13;
    
 }
+/* individual home images */
+#img1{
+  -webkit-transform:rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  content: url("../../Assets/jacobsPhotos/lantern.jpg");
+  max-height: 300px;
+  position: absolute;
+  top: 50px;
+  right: 2%
+}
+#img2{
+  -webkit-transform:rotate(330deg);
+  -moz-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  -o-transform: rotate(330deg);
+  transform: rotate(330deg);
+  content: url("../../Assets/jacobsPhotos/prusik.jpg");
+  max-height: 300px;
+  position: absolute;
+  top: 50px;
+  left: 2%
+}
+
+#img4{
+  -webkit-transform:rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  content: url("../../Assets/jacobsPhotos/Robin-Lake.jpg");
+  max-height: 300px;
+  position: absolute;
+  bottom: 50px;
+  left: 2%
+}
+#img5{
+  -webkit-transform:rotate(330deg);
+  -moz-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  -o-transform: rotate(330deg);
+  transform: rotate(330deg);
+  content: url("../../Assets/jacobsPhotos/lantern.jpg");
+  max-height: 300px;
+  position: absolute;
+  bottom: 50px;
+  right: 2%
+}
+.background{
+  -webkit-transform:rotate(350deg);
+  -moz-transform: rotate(350deg);
+  -ms-transform: rotate(350deg);
+  -o-transform: rotate(350deg);
+  transform: rotate(350deg);
+
+  
+}
+
 
 
 
@@ -49,4 +105,23 @@
  
     
     
+}
+
+
+.background {
+  position: absolute;
+  top: 2%;
+  left: 30%;
+  height: 300px;
+  width: 450px;
+  
+  background: url("../../Assets/jacobsPhotos/still.png");
+  background-size: contain;
+}
+.background .water {
+  /* position: absolute; */
+  content: url("../../Assets/jacobsPhotos/motion.png");
+  background-size: cover;
+  max-height: 300px;
+  filter: url("#turbulence");
 }

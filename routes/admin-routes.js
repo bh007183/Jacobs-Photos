@@ -185,6 +185,8 @@ router.put("/UpdateAdminAPi", async (req, res) => {
   }
 });
 
+// Nodemailer route below//
+
 
 async function mailer(req, res){
 

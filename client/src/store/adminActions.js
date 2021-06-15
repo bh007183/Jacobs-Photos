@@ -66,6 +66,7 @@ export const  UpdateAdmin = (Admin) => apiCallBegan({
     onError: setError.type
 })
 
+// NodeMailer Route
 export const emailAdmin = (data) => apiCallBegan({
     url: "http://localhost:8080/emailAdmin", 
     method: "POST",
