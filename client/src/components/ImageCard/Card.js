@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import ReactCardFlip from "react-card-flip";
+import LazyLoad from 'react-lazy-load';
 export default function Card({img}) {
     const handleFlip = (event) => {
     
@@ -22,12 +23,14 @@ export default function Card({img}) {
             >
               {/* fron */}
               <div onClick={handleFlip} className="hover">
+                <LazyLoad>
                 <img
                   src={img.image}
                   loading="lazy"
                   className={img.layout}
                   alt={img.title}
                 ></img>
+                </LazyLoad>
               </div>
   
               {/* back */}

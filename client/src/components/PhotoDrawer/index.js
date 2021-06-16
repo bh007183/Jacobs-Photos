@@ -38,11 +38,11 @@ const handleCategory = (event) => {
             </ListItem>
             <Divider />
             <ListItem onClick={handleCategory} button>
-              <ListItemText primary={"Scenery"} />
+              <ListItemText primary={"Nature"} />
             </ListItem>
             <Divider />
             <ListItem onClick={handleCategory} button>
-              <ListItemText primary={"Plants"} />
+              <ListItemText primary={"Travel"} />
             </ListItem>
             <Divider />
             <ListItem onClick={() => dispatch(getAllPhotos())} button>

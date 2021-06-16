@@ -111,10 +111,10 @@ export default function UploadPhoto() {
                 <em>Category</em>
               </MenuItem>
               <MenuItem value={"Adventure"}>Adventure</MenuItem>
-              <MenuItem value={"Scenery"}>Scenery</MenuItem>
+              <MenuItem value={"Nature"}>Scenery</MenuItem>
               <MenuItem value={"Featured"}>Featured</MenuItem>
               <MenuItem value={"Night"}>Night</MenuItem>
-              <MenuItem value={"Plants"}>Plants</MenuItem>
+              <MenuItem value={"Travel"}>Plants</MenuItem>
             </Select>
           </FormControl>
         </div>
