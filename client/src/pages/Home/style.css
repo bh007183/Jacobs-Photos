@@ -35,7 +35,7 @@
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
   content: url("../../Assets/jacobsPhotos/lantern.jpg");
-  max-height: 300px;
+  max-height: 200px;
   position: absolute;
   top: 50px;
   right: 2%
@@ -47,7 +47,7 @@
   -o-transform: rotate(330deg);
   transform: rotate(330deg);
   content: url("../../Assets/jacobsPhotos/prusik.jpg");
-  max-height: 300px;
+  max-height: 200px;
   position: absolute;
   top: 50px;
   left: 2%
@@ -60,7 +60,7 @@
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
   content: url("../../Assets/jacobsPhotos/Robin-Lake.jpg");
-  max-height: 300px;
+  max-height: 200px;
   position: absolute;
   bottom: 50px;
   left: 2%
@@ -72,20 +72,12 @@
   -o-transform: rotate(330deg);
   transform: rotate(330deg);
   content: url("../../Assets/jacobsPhotos/lantern.jpg");
-  max-height: 300px;
+  max-height: 200px;
   position: absolute;
   bottom: 50px;
   right: 2%
 }
-.background{
-  -webkit-transform:rotate(350deg);
-  -moz-transform: rotate(350deg);
-  -ms-transform: rotate(350deg);
-  -o-transform: rotate(350deg);
-  transform: rotate(350deg);
 
-  
-}
 
 
 
@@ -112,8 +104,12 @@
   position: absolute;
   top: 2%;
   left: 30%;
-  height: 300px;
-  width: 450px;
+  height: 200px;
+  -webkit-transform:rotate(350deg);
+  -moz-transform: rotate(350deg);
+  -ms-transform: rotate(350deg);
+  -o-transform: rotate(350deg);
+  transform: rotate(350deg);
   
   background: url("../../Assets/jacobsPhotos/still.png");
   background-size: contain;
@@ -122,6 +118,31 @@
   /* position: absolute; */
   content: url("../../Assets/jacobsPhotos/motion.png");
   background-size: cover;
-  max-height: 300px;
+  max-height: 200px;
   filter: url("#turbulence");
+}
+
+#introName{
+  color: white;
+  font-size: 60px;
+  margin: 5px;
+  
+}
+#introCard{
+  border: .5px;
+  border-color: white;
+  border-style: solid;
+  position: absolute;
+  top: 40vh;
+  left: 40%;
+  
+  
+}
+#linkContain{
+  grid-column: span 1;
+  
+}
+.buttonContain{
+ 
+  
 }
