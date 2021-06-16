@@ -5,12 +5,10 @@ import Fab from '@material-ui/core/Fab';
 // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Carousel } from 'react-responsive-carousel';
 import { useDispatch, useSelector } from "react-redux";
-import { getFeatured } from "../../store/photoActions";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import TwitterIcon from '@material-ui/icons/Twitter';
-
+import IconButton from "@material-ui/core/IconButton"
+ 
 export default function Home() {
   const dispatch = useDispatch();
   let images = useSelector((state) => state.Store.Photo.All);
@@ -60,11 +58,12 @@ export default function Home() {
         <p id="introName">Jacob Hopkins </p>
         <div id="linkContain">
           <div className="buttonContain">
-            
-              <InstagramIcon style={{color: "white"}} />
-              <FacebookIcon style={{color: "white"}} />
-              <YouTubeIcon style={{color: "white"}} />
-              <TwitterIcon style={{color: "white"}} />
+           
+            <IconButton href="https://www.facebook.com/jacob.hopkins.79" target="_Blank">
+            <FacebookIcon style={{color: "white"}} />
+            </IconButton>
+              
+              
            
           </div>
          

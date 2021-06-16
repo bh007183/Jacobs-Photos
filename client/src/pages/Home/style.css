@@ -71,7 +71,7 @@
   -ms-transform: rotate(330deg);
   -o-transform: rotate(330deg);
   transform: rotate(330deg);
-  content: url("../../Assets/jacobsPhotos/lantern.jpg");
+  content: url("../../Assets/jacobsPhotos/mab.jpg");
   max-height: 200px;
   position: absolute;
   bottom: 50px;
@@ -80,31 +80,12 @@
 
 
 
-
-
-
-
-
-
-
-@media only screen and (max-width: 870px) {
-    
-  
-
-   
-    
-
- 
-    
-    
-}
-
-
 .background {
   position: absolute;
   top: 2%;
   left: 30%;
   height: 200px;
+  
   -webkit-transform:rotate(350deg);
   -moz-transform: rotate(350deg);
   -ms-transform: rotate(350deg);
@@ -130,11 +111,14 @@
 }
 #introCard{
   border: .5px;
-  border-color: white;
+  /* border-color: white; */
   border-style: solid;
   position: absolute;
   top: 40vh;
   left: 40%;
+  background: rgba(71, 1, 1, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
   
   
 }
@@ -142,7 +126,12 @@
   grid-column: span 1;
   
 }
-.buttonContain{
- 
-  
+
+@media only screen and (max-width: 365px){
+  #introCard{
+    
+    top: 40vh;
+    left: 30%;
+  }
 }
+
