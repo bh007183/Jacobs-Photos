@@ -31,7 +31,7 @@ export default function Photos() {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
+     
       <button onClick={handleOpen} id="categoryButton">
         <p id="vertical">Open</p>
       </button>

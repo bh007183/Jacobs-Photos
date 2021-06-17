@@ -4,7 +4,7 @@
 }
 #contactForm{
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 30%;
@@ -50,6 +50,6 @@ height: 150px;
 @media only screen and (max-width: 870px){
     #sendersMessage{
         width: 80vw;
-        height: 35vh;
+        height: 30vh;
     }
 }

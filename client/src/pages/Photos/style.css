@@ -65,7 +65,8 @@ text-align: center;
   position: fixed;
   top: 60px;
   z-index: 99;
-  border: 0
+  border: 0;
+  background-color: rgb(179, 197, 152);
   
 }
 
