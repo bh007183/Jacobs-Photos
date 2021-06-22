@@ -1,29 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import Fab from '@material-ui/core/Fab';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-import { useDispatch, useSelector } from "react-redux";
-import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import IconButton from "@material-ui/core/IconButton"
  
 export default function Home() {
-  const dispatch = useDispatch();
-  let images = useSelector((state) => state.Store.Photo.All);
-  useEffect(() => {
-    // dispatch(getFeatured())
-  }, []);
-
+  
   return (
     <div className="headerPhoto">
       <div id="CardContain">
-        <img id="img1"></img>
-        <img id="img2"></img>
+        <img id="img1" alt="Rock Climbing"></img>
+        <img id="img2" alt="Night Lantern"></img>
 
         <div className="background">
-          <img className="water"></img>
+          <img className="water" alt="White Water Rafting"></img>
         </div>
 
         <svg id="svg">
@@ -50,8 +40,8 @@ export default function Home() {
           />
         </svg>
 
-        <img id="img4"></img>
-        <img id="img5"></img>
+        <img id="img4" alt="Alpine Sunset"></img>
+        <img id="img5" alt="Moab Bike"></img>
 
         <div id="introCard">
  

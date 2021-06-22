@@ -4,7 +4,7 @@
     background-position: top;
     background-repeat: no-repeat;
     contain: content;
-    /* overflow: scroll; */
+    overflow: hidden;
    
   
   background-size: cover;

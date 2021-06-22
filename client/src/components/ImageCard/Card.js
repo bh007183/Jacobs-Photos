@@ -17,11 +17,11 @@ export default function Card({img}) {
     return (
        
             <ReactCardFlip
-              onClick={() => console.log("test")}
+              
               isFlipped={isFlipped}
               flipDirection="horizontal"
             >
-              {/* fron */}
+              {/* front */}
               <div onClick={handleFlip} className="hover">
                 <LazyLoad>
                 <img
@@ -37,9 +37,8 @@ export default function Card({img}) {
   
               <div className="hover">
                 <div
-                  className="hover"
-                  onClick={handleFlip}
                   
+                  onClick={handleFlip}
                   className={img.layout + "Back"}
                 >
                   <h4>Title</h4>

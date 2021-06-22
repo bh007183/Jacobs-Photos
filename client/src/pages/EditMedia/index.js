@@ -113,7 +113,7 @@ const [modal, setModal] = useState({});
                 
                 <div   onClick={handleOpen}  className="editImgItem">
                 <h1 style={{zIndex: "99"}} data-obj={JSON.stringify(photo)} className="imgText">Edit</h1>
-                <img data-obj={JSON.stringify(photo)} src={photo.image} style={{maxWidth: "100%", cursor: "pointer"}}></img>
+                <img data-obj={JSON.stringify(photo)} alt="Option to Edit" src={photo.image} style={{maxWidth: "100%", cursor: "pointer"}}></img>
                 </div>
                 </div>
                 

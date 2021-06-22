@@ -5,12 +5,9 @@
 .videoRow{
     display: flex;
     justify-content: center;
-/* display: grid; */
-/* grid-template-columns: repeat(11, 1fr); */
 margin-top: 20px;
 }
 .videoColumn{
-    /* grid-column-start:  6; */
    width: 60vw;
   aspect-ratio: 16/9;
 

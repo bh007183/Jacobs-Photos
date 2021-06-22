@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
-import axios from "axios";
 import { Alert} from '@material-ui/lab';
 import {useDispatch, useSelector} from "react-redux"
 import {uploadVideo, resetSuccessFail} from "../../store/videoActions"

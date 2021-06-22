@@ -37,11 +37,6 @@ const slice = createSlice({
             Photo.Error = ''
         },
 
-        resetSuccessFail: (Photo, action) => {
-            Photo.Success = '';
-            Photo.Error = ''
-        }
-
     }
 })
 

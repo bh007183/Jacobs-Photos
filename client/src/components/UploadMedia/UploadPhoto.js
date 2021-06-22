@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-
 import { Alert} from '@material-ui/lab';
 import {useDispatch, useSelector} from "react-redux"
 import {uploadPhoto, resetSuccessFail} from "../../store/photoActions"
@@ -46,7 +45,7 @@ export default function UploadPhoto() {
         if (!error && result && result.event === "success") {
           setPhoto({ ...photo, image: result.info.url, publicId: result.info.public_id });
         }else{
-          console.log(error)
+          alert("Something went wrong. Please try again.")
         }
       }
     ).open()
@@ -139,7 +138,7 @@ export default function UploadPhoto() {
       </div>
       <div className="row11">
         <div id="UploadedImage">
-          <img id="img" src={photo.image}></img>
+          <img id="img" src={photo.image} alt="Selection To Upload"></img>
         </div>
 
         <div id="widgetOpen">

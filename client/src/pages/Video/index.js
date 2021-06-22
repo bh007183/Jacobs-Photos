@@ -8,8 +8,8 @@ export default function Video() {
 const dispatch = useDispatch()
 const videos = useSelector(state => state.Store.Video.Featured)
     useEffect(() => {
-        dispatch(getVideo())
-    }, [])
+      dispatch(getVideo())
+    }, [dispatch])
 
 
 

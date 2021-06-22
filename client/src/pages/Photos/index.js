@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import "./style.css";
 import PhotoDrawer from "../../components/PhotoDrawer";
-import axios from "axios";
 import { getAllPhotos } from "../../store/photoActions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,7 +13,7 @@ export default function Photos() {
 
   useEffect(() => {
     dispatch(getAllPhotos());
-  }, []);
+  }, [dispatch]);
 
   const [state, setState] = React.useState(false);
 

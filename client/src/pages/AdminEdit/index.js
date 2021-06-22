@@ -22,7 +22,7 @@ export default function AdminEdit() {
   useEffect(() => {
     Authentication()
     dispatch(getAdmin());
-  }, []);
+  }, [dispatch]);
 
   const handleChange = (event) => {
     let name = event.target.name;

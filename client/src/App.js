@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
@@ -19,9 +19,6 @@ import EditMedia from "./pages/EditMedia";
 
 const store = configureStore();
 
-const currentKey = window.location.pathname.split("/")[1] || "/";
-//Specify the duration of the animation (on enter and on exit)
-const timeout = { enter: 800, exit: 400 };
 
 function App() {
   return (
