@@ -56,8 +56,6 @@ export default function UploadPhoto() {
 
   const handleImageUpload = (event) => {
     event.preventDefault();
-    
-    console.log(process.env.REACT_APP_CLOUDPRESET)
     widget();
   };
 
