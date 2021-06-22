@@ -81,7 +81,7 @@ router.get("/apiByCategory/:category", async (req, res) => {
 });
 
 router.get("/apiEditPhoto/:title", async (req, res) => {
-  console.log(req.body);
+  
   let token = false;
   if (!req.headers) {
     token = false;
@@ -120,7 +120,7 @@ router.get("/apiEditPhoto/:title", async (req, res) => {
   }
 });
 router.put("/apiSubmitPhotoEdit", async (req, res) => {
-  // console.log(req.body)
+  
   let token = false;
   switch (req) {
     case !req.headers:

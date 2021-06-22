@@ -38,7 +38,7 @@ router.post("/addVideo", async (req, res) => {
 
 router.get("/getVideo", async (req, res)=> {
   let data = await db.Video.find({}).sort({ createdAt: -1 }).catch(err => res.status(404).send("There was an issue retreiving Video"))
-  console.log(data)
+ 
   res.status(200).json(data)
 })
 

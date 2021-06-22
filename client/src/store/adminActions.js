@@ -21,7 +21,7 @@ const slice = createSlice({
         setAdmin: (Admin, action) => {
             Admin.AdminUser.username = action.payload.username;
             Admin.AdminUser.email = action.payload.email
-            console.log(action.payload)
+            
         },
 
         setError: (Admin, action) => {

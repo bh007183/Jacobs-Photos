@@ -27,7 +27,7 @@ router.post("/adminLoginApi", async (req, res) => {
       return data
     }
   })
-  console.log(data)
+  
   
   if(data){
   const match = await bcrypt.compare(req.body.data.password, data.password).catch(err => res.status(401).send("No Such User!"))
@@ -117,7 +117,7 @@ router.get("/getAdminAPi", async (req, res) => {
       let resData = await db.Admin.findById(data.id).select("-password").catch((err) =>
         res.status(401).send("Unable to retrieve user.")
       );
-      console.log(resData)
+     
       res.status(200).json(resData);
     } else {
       res.status(403).send("Session Expired. Please Login.");
