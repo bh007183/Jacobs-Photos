@@ -25,7 +25,6 @@ const videos = useSelector(state => state.Store.Video.Featured)
       {videos.map(video => 
       <div key={video._id} className="videoRow">
         <div className="videoColumn">
-      <h4 className="videoTitle">{video.title}</h4>
           <iframe
             src={video.video}
             title="YouTube video player"
