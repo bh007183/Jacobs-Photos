@@ -1,9 +1,11 @@
-import React from 'react'
+// const mainBtn = document.querySelector('.mainButton')
 
-export default function script() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+// mainBtn.addEventListener('click', function() {
+//     console.log('hellwwo')
+// })
+
+const contactBtn = document.querySelector('.contactButton')
+
+contactBtn.addEventListener('click', function() {
+    console.log('hellwwo')
+})

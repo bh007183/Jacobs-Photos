@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import FacebookIcon from '@material-ui/icons/Facebook';
-import IconButton from "@material-ui/core/IconButton"
+import IconButton from "@material-ui/core/IconButton";
+import InstagramIcon from '@material-ui/icons/Instagram';
  
 export default function Home() {
   
@@ -42,23 +43,27 @@ export default function Home() {
 
         <img id="img4" alt="Alpine Sunset"></img>
         <img id="img5" alt="Moab Bike"></img>
-
+        
         <div id="introCard">
  
-        <p id="introName">Jacob Hopkins </p>
-        <div id="linkContain">
-          <div className="buttonContain">
-           
-            <IconButton href="https://www.facebook.com/jacob.hopkins.79" target="_Blank">
-            <FacebookIcon style={{color: "white"}} />
-            </IconButton>
-              
-              
-           
-          </div>
-         
+        <p id="introName">Jacob Hopkins</p>
+        <p id="jobTitle">Photographer</p>
+          <div id="linkContain">
+            <div className="buttonContain">
+            
+              <IconButton className='icon' href="https://www.facebook.com/jacob.hopkins.79" target="_Blank">
+              <FacebookIcon style={{color: "white"}} />
+              </IconButton>
+              <IconButton className='icon' href="https://www.instagram.com/_jacob.hopkins/?hl=en" target="_Blank">
+              <InstagramIcon style={{color: "white"}} />
+              </IconButton>
+                
+                
+            
+            </div>
+          
 
-        </div>
+          </div>
 
         </div>
 

@@ -5,7 +5,16 @@ export default function About() {
     return (
         <div className="aboutMain">
 
-            <p style={{color: "white", position: "absolute", top: "20vw", left: "50vw"}}>This page is under construction</p>
+            <p className='firstParagraph'>
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+            </p>
+            <p className='secondParagraph'>
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+                Jacob blah blah blah Jacob blah blah blah Jacob blah blah blah Jacob blah blah
+            </p>
             
         </div>
     )

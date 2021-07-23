@@ -5,3 +5,27 @@
     background-repeat: no-repeat;
     background-color: rgb(4, 4, 4);
 }
+
+.firstParagraph {
+    color: white;
+    position: absolute;
+    top: 20vw;
+    left: 50vw;
+}
+
+.secondParagraph {
+    color: white;
+    position: absolute;
+}
+
+@media only screen and (max-width: 400px) {
+    .aboutMain {
+        background-size: 165%;
+    }
+
+    .secondParagraph {
+        width: 50vw;
+        top: 150vw;
+        left: 20vw;
+    }
+}

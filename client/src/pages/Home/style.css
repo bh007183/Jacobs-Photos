@@ -78,8 +78,6 @@
   right: 2%
 }
 
-
-
 .background {
   position: absolute;
   top: 2%;
@@ -107,8 +105,14 @@
   color: white;
   font-size: 60px;
   margin: 5px;
-  
 }
+
+#jobTitle{
+  color: white;
+  font-size: 30px;
+  margin: 5px;
+}
+
 #introCard{
   border: .5px;
   /* border-color: white; */
@@ -125,6 +129,42 @@
 #linkContain{
   grid-column: span 1;
   
+}
+
+@media only screen and (max-width: 400px){
+  #introCard {
+    position: initial;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 50px;
+    height: 40vh;
+    backdrop-filter: blur(5px);
+  }
+
+  #img1{
+      display: none;
+  }
+
+  #img2{
+    display: none;
+  }
+  
+  #img4{
+    display: none;
+  }
+
+  #img5{
+    display: none;
+  }
+
+  .water {
+    display: none;
+  }
+
+  path {
+    width: 100px;
+  }
 }
 
 @media only screen and (max-width: 365px){
