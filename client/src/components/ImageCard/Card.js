@@ -41,8 +41,7 @@ export default function Card({img}) {
                   onClick={handleFlip}
                   className={img.layout + "Back"}
                 >
-                  <h4>Title</h4>
-                  <p>{img.title}</p>
+                  <h4>{img.title}</h4>
   
                   <p>{img.about}</p>
                 </div>
