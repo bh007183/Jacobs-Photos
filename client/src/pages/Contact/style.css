@@ -15,6 +15,11 @@ display: flex;
 justify-content: center;
 margin-top: 5%;
 }
+.inputItem2{
+display: flex;
+justify-content: space-between  ;
+margin-top: 5%;
+}
 #sendersMessage{
 resize: none;
 width: 400px;
@@ -24,6 +29,9 @@ height: 150px;
 .MuiButton-root{
     background: purple !important; 
    
+}
+.contactInput{
+    background-color: rgb(175, 175, 175);
 }
 
 #phoneNumber{
@@ -36,6 +44,13 @@ height: 150px;
     left: 10px;
     display: flex;
     justify-content: center;
+}
+#locationPosition{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
 }
 #socialMedia{
     position: absolute;

@@ -4,17 +4,21 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-color: rgb(4, 4, 4);
+    position: relative;
 }
 
 .firstParagraph {
-    color: white;
+    color: rgb(197, 197, 197);
+}
+#textContain{
+    width: 60%;
     position: absolute;
     top: 20vw;
-    left: 50vw;
+    left: 30vw;
 }
 
 .secondParagraph {
-    color: white;
+    color: rgb(202, 202, 202);
     position: absolute;
 }
 

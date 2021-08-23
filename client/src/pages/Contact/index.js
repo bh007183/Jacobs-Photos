@@ -53,24 +53,26 @@ export default function Contact() {
 
       <div id="contactFormContain">
         <form onSubmit={handleSubmit} id="contactForm">
-          <div className="inputItem" id="sendersName">
+          <div className="inputItem2" id="sendersName">
             <input
+            className="contactInput"
               onChange={handleChange}
               name="name"
               value={message.name}
               placeholder="Name (required)"
             ></input>
-          </div>
-          <div className="inputItem" id="sendersPhone">
+          
             <input
+            className="contactInput"
               onChange={handleChange}
               name="phone"
               value={message.phone}
               placeholder="Phone (optional)"
             ></input>
           </div>
-          <div className="inputItem" id="sendersEmail">
+          <div style={{marginTop:"5%"}} id="sendersEmail">
             <input
+            className="contactInput"
               onChange={handleChange}
               name="email"
               value={message.email}
@@ -79,6 +81,7 @@ export default function Contact() {
           </div>
           <div className="inputItem">
             <textarea
+            className="contactInput"
               onChange={handleChange}
               id="sendersMessage"
               name="message"
@@ -93,11 +96,11 @@ export default function Contact() {
           </div>
         </form>
         <div id="phonePosition">
-          <p style={{ color: "white", margin: "0px" }}>Call: </p>
           <a id="phoneNumber" href="tel:5093934043">
             509-393-4043
           </a>
         </div>
+        <span id="locationPosition">Leavenworth, WA</span>
         <div id="socialMedia">
           
           <IconButton
