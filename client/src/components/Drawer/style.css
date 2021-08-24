@@ -1,0 +1,12 @@
+.DrawerRouterLink{
+    
+    text-decoration: none;
+    color: white;
+}
+
+/* Material Ui Class to attach styling to drawer */
+
+.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorRight.MuiPaper-elevation16 {
+    background: rgba(0, 0, 0, 0.616);
+    backdrop-filter: blur(3px);
+  }

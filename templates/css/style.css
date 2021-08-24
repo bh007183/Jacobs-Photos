@@ -1,0 +1,41 @@
+.aboutMain {
+    background-image: url(../../client/src/Assets/jacobsPhotos/aboutbackground.jpeg);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 4, 4);
+
+    animation: slidein;
+    animation-duration: 5s;
+}
+
+@keyframes slideinMain {
+    from {
+      transform: translateX(2000px);
+    }
+  
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes slideinContact {
+    from {
+      transform: translateX(-2000px);
+    }
+  
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  .aboutContact {
+    background-image: url(../../client/src/Assets/jacobsPhotos/aboutbackground.jpeg);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 4, 4);
+
+    animation: slideinContact;
+    animation-duration: 5s;
+}

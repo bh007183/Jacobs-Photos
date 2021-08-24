@@ -1,0 +1,25 @@
+.videoBackground{
+    background: black;
+    min-height: 100vh;
+}
+.videoRow{
+    display: flex;
+    justify-content: center;
+margin-top: 20px;
+}
+.videoColumn{
+   width: 60vw;
+  aspect-ratio: 16/9;
+
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}
+.videoTitle{
+    color: whitesmoke;
+    background-color: rgb(39, 36, 36);
+    margin-bottom: 0px;
+    text-align: center;
+    
+}

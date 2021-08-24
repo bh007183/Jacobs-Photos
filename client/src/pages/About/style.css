@@ -1,0 +1,36 @@
+.aboutMain {
+    background-image: url(../../Assets/jacobsPhotos/aboutbackground.jpeg);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(4, 4, 4);
+    position: relative;
+}
+
+.firstParagraph {
+    color: rgb(197, 197, 197);
+    font-size: large;
+}
+#textContain{
+    width: 60%;
+    position: absolute;
+    top: 20vw;
+    left: 30vw;
+}
+
+.secondParagraph {
+    color: rgb(202, 202, 202);
+    position: absolute;
+}
+
+@media only screen and (max-width: 400px) {
+    .aboutMain {
+        background-size: 165%;
+    }
+
+    .secondParagraph {
+        width: 50vw;
+        top: 150vw;
+        left: 20vw;
+    }
+}

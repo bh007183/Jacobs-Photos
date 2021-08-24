@@ -1,0 +1,177 @@
+
+.headerPhoto{
+    background-image: url("../../Assets/jacobsPhotos/pattern.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    contain: content;
+    overflow: hidden;
+   
+  
+  background-size: cover;
+  height: 100vh
+  
+}
+  /* home cards */
+
+#ownerAccess{
+    
+    font-size: 9px; 
+    color: white; 
+    position: fixed;
+    bottom: 1vh;
+    left: 2%;
+    
+}
+#ownerLinkContain{
+    width: 100%;
+    grid-column: 1/13;
+   
+}
+/* individual home images */
+#img1{
+  -webkit-transform:rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  content: url("../../Assets/jacobsPhotos/lantern.jpg");
+  max-height: 200px;
+  position: absolute;
+  top: 50px;
+  right: 2%
+}
+#img2{
+  -webkit-transform:rotate(330deg);
+  -moz-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  -o-transform: rotate(330deg);
+  transform: rotate(330deg);
+  content: url("../../Assets/jacobsPhotos/prusik.jpg");
+  max-height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 2%
+}
+
+#img4{
+  -webkit-transform:rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+  content: url("../../Assets/jacobsPhotos/Robin-Lake.jpg");
+  max-height: 200px;
+  position: absolute;
+  bottom: 50px;
+  left: 2%
+}
+#img5{
+  -webkit-transform:rotate(330deg);
+  -moz-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  -o-transform: rotate(330deg);
+  transform: rotate(330deg);
+  content: url("../../Assets/jacobsPhotos/mab.jpg");
+  max-height: 200px;
+  position: absolute;
+  bottom: 50px;
+  right: 2%
+}
+
+.background {
+  position: absolute;
+  top: 2%;
+  left: 30%;
+  height: 200px;
+  
+  -webkit-transform:rotate(350deg);
+  -moz-transform: rotate(350deg);
+  -ms-transform: rotate(350deg);
+  -o-transform: rotate(350deg);
+  transform: rotate(350deg);
+  
+  background: url("../../Assets/jacobsPhotos/still.png");
+  background-size: contain;
+}
+.background .water {
+  /* position: absolute; */
+  content: url("../../Assets/jacobsPhotos/motion.png");
+  background-size: cover;
+  max-height: 200px;
+  filter: url("#turbulence");
+}
+
+#introName{
+  color: white;
+  font-size: 60px;
+  margin: 5px;
+}
+
+#jobTitle{
+  color: white;
+  font-size: 30px;
+  margin: 5px;
+}
+
+#introCard{
+  border: .5px;
+  /* border-color: white; */
+  border-style: solid;
+  position: absolute;
+  top: 40vh;
+  left: 40%;
+  background: rgba(71, 1, 1, 0.1);
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  
+  
+}
+#linkContain{
+  grid-column: span 1;
+  
+}
+
+@media only screen and (max-width: 400px){
+  #introCard {
+    position: initial;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 50px;
+    height: 40vh;
+    backdrop-filter: blur(5px);
+  }
+
+  #img1{
+      display: none;
+  }
+
+  #img2{
+    display: none;
+  }
+  
+  #img4{
+    display: none;
+  }
+
+  #img5{
+    display: none;
+  }
+
+  .water {
+    display: none;
+  }
+
+  path {
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 365px){
+  #introCard{
+    
+    top: 40vh;
+    left: 30%;
+  }
+}
+

@@ -1,0 +1,20 @@
+.EditAdminContain{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#EditAdminForm{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.EditInputContain{
+    grid-column: span 12;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
