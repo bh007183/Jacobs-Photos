@@ -52,13 +52,13 @@ export const {setAdmin, setError, setSuccess, onAdminChange, Reset, setNodeError
 export default slice.reducer
 
 export const  getAdmin = () => apiCallBegan({
-    url: "http://localhost:8080/getAdminAPi", 
+    url: "https://jacobsportfolio1234.herokuapp.com/getAdminAPi", 
     headers: {authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setAdmin.type,
     onError: setError.type
 })
 export const  UpdateAdmin = (Admin) => apiCallBegan({
-    url: "http://localhost:8080/UpdateAdminAPi", 
+    url: "https://jacobsportfolio1234.herokuapp.com/UpdateAdminAPi", 
     headers: {authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "PUT",
     data: Admin,
@@ -68,7 +68,7 @@ export const  UpdateAdmin = (Admin) => apiCallBegan({
 
 // NodeMailer Route
 export const emailAdmin = (data) => apiCallBegan({
-    url: "http://localhost:8080/emailAdmin", 
+    url: "https://jacobsportfolio1234.herokuapp.com/emailAdmin", 
     method: "POST",
     data: data,
     onSuccess: setNodeSuccess.type,
