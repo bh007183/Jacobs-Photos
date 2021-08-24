@@ -105,6 +105,7 @@
   color: white;
   font-size: 60px;
   margin: 5px;
+  font-weight: bolder;
 }
 
 #jobTitle{
@@ -117,18 +118,18 @@
   border: .5px;
   /* border-color: white; */
   border-style: solid;
-  position: absolute;
-  top: 40vh;
-  left: 40%;
   background: rgba(71, 1, 1, 0.1);
   backdrop-filter: blur(3px);
   border-radius: 5px;
-  
-  
+  width: 30vw;
+  margin: auto;
+  margin-top: 200px;
+  padding: 45px;
+  text-align: center;
 }
+
 #linkContain{
-  grid-column: span 1;
-  
+  grid-column: span 1;  
 }
 
 @media only screen and (max-width: 400px){

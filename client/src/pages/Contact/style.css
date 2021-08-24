@@ -1,25 +1,36 @@
 .contactContain{
     height: 100vh;
     background-color: black;
+    background-image: url(../../Assets/jacobsPhotos/contactBackground.jpg);
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
 }
+
 #contactForm{
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 45%;
+    left: 65%;
     transform: translate(-50%, -50%);
     height: 30%;
-    
 }
+
+#contactForm h2 {
+    color: white;
+}
+
 .inputItem{
 display: flex;
 justify-content: center;
 margin-top: 5%;
 }
+
 .inputItem2{
 display: flex;
 justify-content: space-between  ;
 margin-top: 5%;
 }
+
 #sendersMessage{
 resize: none;
 width: 400px;
@@ -27,17 +38,20 @@ height: 150px;
 }
 
 .MuiButton-root{
-    background: purple !important; 
-   
+    background: white !important; 
 }
+
 .contactInput{
     background-color: rgb(175, 175, 175);
+    border: white 2px solid;
+    border-radius: 5px;
 }
 
 #phoneNumber{
     color: white;
     margin-left: 10px;
 }
+
 #phonePosition{
     position: absolute;
     bottom: 10px;
@@ -45,6 +59,7 @@ height: 150px;
     display: flex;
     justify-content: center;
 }
+
 #locationPosition{
     position: absolute;
     bottom: 40px;
@@ -52,12 +67,14 @@ height: 150px;
     color: white;
     transform: translate(-50%, -50%);
 }
+
 #socialMedia{
     position: absolute;
     bottom: 10px;
     right: 10px;
 
 }
+
 .contactIcon{
     padding-bottom: 0px !important;
 }

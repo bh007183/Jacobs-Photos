@@ -53,6 +53,7 @@ export default function Contact() {
 
       <div id="contactFormContain">
         <form onSubmit={handleSubmit} id="contactForm">
+          <h2>Contact Form</h2>
           <div className="inputItem2" id="sendersName">
             <input
             className="contactInput"
