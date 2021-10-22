@@ -32,7 +32,7 @@ export default slice.reducer
 // api calls go below
 
 export const uploadVideo = (data) => apiCallBegan({
-    url: "https://jacobsportfolio1234.herokuapp.com/addVideo",
+    url: "http://localhost:8080/addVideo",
     method: "POST",
     data: data,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
@@ -40,7 +40,7 @@ export const uploadVideo = (data) => apiCallBegan({
     onError: setError.type,
 })
 export const getVideo = (data) => apiCallBegan({
-    url: "https://jacobsportfolio1234.herokuapp.com/getVideo",
+    url: "http://localhost:8080/getVideo",
     onSuccess: setVideos.type,
     onError: setError.type,
 })

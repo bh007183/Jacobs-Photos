@@ -2,7 +2,7 @@
 import axios from "axios"
 
 export default function Authentication() {
-        axios.get("https://jacobsportfolio1234.herokuapp.com/adminAccessAuthorized", {
+        axios.get("http://localhost:8080/adminAccessAuthorized", {
             headers: { authorization: "Bearer: " + localStorage.getItem("Token") },
         }).then(res => {
 

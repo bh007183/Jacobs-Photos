@@ -47,13 +47,13 @@ export default slice.reducer
 
 
 export const getAllPhotos = () => apiCallBegan({
-url: "https://jacobsportfolio1234.herokuapp.com/getImages",
+url: "http://localhost:8080/getImages",
 onSuccess: setAllPhotos.type,
 onError: setError.type
 })
 
 export const uploadPhoto = (data) => apiCallBegan({
-    url: "https://jacobsportfolio1234.herokuapp.com/addPhoto",
+    url: "http://localhost:8080/addPhoto",
     method: "POST",
     data: data,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
@@ -62,20 +62,20 @@ export const uploadPhoto = (data) => apiCallBegan({
 })
 
 export const getPhotoByCategory = (category) => apiCallBegan({
-    url: `https://jacobsportfolio1234.herokuapp.com/apiByCategory/${category}`,
+    url: `http://localhost:8080/apiByCategory/${category}`,
     onSuccess: setAllPhotos.type,
     onError: setError.type,
 })
 
 export const getEditPhotosAdmin = (title) => apiCallBegan({
-    url: `https://jacobsportfolio1234.herokuapp.com/apiEditPhoto/${title}`,
+    url: `http://localhost:8080/apiEditPhoto/${title}`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     onSuccess: setEditPhotos.type,
     onError: setError.type,
 })
 
 export const submitEdit = (obj) => apiCallBegan({
-    url: `https://jacobsportfolio1234.herokuapp.com/apiSubmitPhotoEdit`,
+    url: `http://localhost:8080/apiSubmitPhotoEdit`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "PUT",
     data: obj,
@@ -84,14 +84,14 @@ export const submitEdit = (obj) => apiCallBegan({
 })
 
 export const deletePhoto = (obj) => apiCallBegan({
-    url: `https://jacobsportfolio1234.herokuapp.com/apiPhotoDelete/${obj._id}/${obj.publicId}`,
+    url: `http://localhost:8080/apiPhotoDelete/${obj._id}/${obj.publicId}`,
     headers: { authorization: "Bearer: " + localStorage.getItem("Token")},
     method: "DELETE",
     onSuccess: setDeleteSuccess.type,
     onError: setError.type,
 })
 export const getFeatured = () => apiCallBegan({
-    url: `https://jacobsportfolio1234.herokuapp.com/getFeatured`,
+    url: `http://localhost:8080/getFeatured`,
     onSuccess: setAllPhotos.type,
     onError: setError.type,
 })
